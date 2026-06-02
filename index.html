@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1YQB70vWohHivF7UI3WrShBBF7Ed-gVwY"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 /* ===================================================
    DESIGN SYSTEM: Lovable × Sam's Design Fusion
@@ -23,16 +23,40 @@
    + Crafted · Premium · Trustworthy · Timeless
 =================================================== */
 :root{
-  --bg:#0c0e12; --bg-card:#15181e; --bg-sec:#23272f; --bg-muted:#1f2229;
-  --text:#e7ebef; --muted:#7b899d;
-  --teal:#19e6d4; --purple:#8d52e0; --green:#26d971; --gold:#ddc77c;
-  --border:#272c35;
-  --grad:linear-gradient(135deg,#19e6d4,#8d52e0);
-  --card-grad:linear-gradient(145deg,#16191f,#111317);
-  --glow-sm:0 0 20px rgba(25,230,212,.15);
-  --glow-lg:0 0 40px rgba(25,230,212,.25);
+  /* ── System 1 × System 2 Fusion ── */
+  --bg:#000000;
+  --bg-alt:#0A090F;
+  --bg-card:#1C1917;
+  --bg-sec:#181818;
+  --bg-muted:#0C0A09;
+
+  --text:#FFFFFF;
+  --text-warm:#EFEFE5;
+  --muted:#888680;
+
+  /* Accent — System 1: violet is the ONLY color pop */
+  --teal:#8B5CF6;
+  --violet:#8B5CF6;
+  --violet-dim:rgba(139,92,246,.1);
+
+  /* System 2: rainbow gradient for borders & glows */
+  --rainbow:linear-gradient(135deg,#FF3B3B,#FF8C00,#FFD700,#00C853,#1E90FF,#7D63FF);
+  --purple:#7D63FF;
+  --green:#00C853;
+  --gold:#CA8D35;
+
+  --border:rgba(255,255,255,0.12);
+  --border-dark:#353539;
+
+  --grad:linear-gradient(135deg,#8B5CF6,#7D63FF);
+  --card-grad:linear-gradient(145deg,#1C1917,#111110);
+
+  --glow-sm:0 0 20px rgba(139,92,246,.18);
+  --glow-lg:0 0 40px rgba(139,92,246,.32);
+
   --font:'Space Grotesk',sans-serif;
-  --r:12px; --pill:999px;
+  --mono:'Roboto Mono',monospace;
+  --r:8px; --pill:64px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -116,7 +140,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .hero-hello{font-size:1rem;color:var(--muted);font-weight:400;margin-bottom:6px}
 .hero-name{font-size:clamp(3rem,7.5vw,5.5rem);font-weight:700;line-height:1;
   margin-bottom:16px;
-  background:linear-gradient(135deg,#19e6d4,#8d52e0,#ddc77c,#19e6d4);
+  background:linear-gradient(135deg,#8B5CF6,#7D63FF,#CA8D35,#8B5CF6);
   background-size:300% 300%;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   animation:shimmer 6s ease-in-out infinite}
@@ -166,7 +190,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
   background:repeating-linear-gradient(
     0deg,
     transparent,transparent 3px,
-    rgba(25,230,212,.025) 3px,rgba(25,230,212,.025) 4px
+    rgba(139,92,246,.025) 3px,rgba(139,92,246,.025) 4px
   );
 }
 
@@ -194,16 +218,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .photo-corner{position:absolute;width:20px;height:20px;z-index:4;pointer-events:none}
 .photo-corner.tl{top:-3px;left:-3px;
   border-top:2px solid var(--teal);border-left:2px solid var(--teal);
-  box-shadow:-2px -2px 8px rgba(25,230,212,.4)}
+  box-shadow:-2px -2px 8px rgba(139,92,246,.4)}
 .photo-corner.tr{top:-3px;right:-3px;
   border-top:2px solid var(--purple);border-right:2px solid var(--purple);
-  box-shadow:2px -2px 8px rgba(141,82,224,.4)}
+  box-shadow:2px -2px 8px rgba(125,99,255,.4)}
 .photo-corner.bl{bottom:-3px;left:-3px;
   border-bottom:2px solid var(--purple);border-left:2px solid var(--purple);
-  box-shadow:-2px 2px 8px rgba(141,82,224,.4)}
+  box-shadow:-2px 2px 8px rgba(125,99,255,.4)}
 .photo-corner.br{bottom:-3px;right:-3px;
   border-bottom:2px solid var(--teal);border-right:2px solid var(--teal);
-  box-shadow:2px 2px 8px rgba(25,230,212,.4)}
+  box-shadow:2px 2px 8px rgba(139,92,246,.4)}
 
 /* Status bar at bottom */
 .photo-status{
@@ -227,7 +251,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 /* ID tag top-right */
 .photo-id{position:absolute;top:10px;right:10px;z-index:5;
   background:rgba(12,14,18,.82);backdrop-filter:blur(6px);
-  border:1px solid rgba(25,230,212,.25);border-radius:4px;
+  border:1px solid rgba(139,92,246,.25);border-radius:4px;
   padding:3px 8px;font-size:.56rem;font-weight:600;
   letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
 
@@ -266,7 +290,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .edu-cards{display:flex;flex-direction:column;gap:13px}
 .edu-card{background:var(--card-grad);border:1px solid var(--border);
   border-radius:var(--r);padding:20px 22px;transition:all .2s}
-.edu-card:hover{border-color:rgba(25,230,212,.3);box-shadow:var(--glow-sm)}
+.edu-card:hover{border-color:rgba(139,92,246,.3);box-shadow:var(--glow-sm)}
 .edu-school{font-size:.93rem;font-weight:600;color:var(--text);margin-bottom:3px}
 .edu-deg{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:9px}
 .edu-meta{display:flex;gap:14px;font-size:.73rem}
@@ -280,7 +304,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
   font-family:var(--font);font-size:.8rem;font-weight:500;
   padding:7px 17px;border-radius:var(--pill);cursor:pointer;transition:all .2s}
 .stab:hover{color:var(--text)}
-.stab.on{background:rgba(25,230,212,.1);border-color:var(--teal);color:var(--teal)}
+.stab.on{background:rgba(139,92,246,.1);border-color:var(--teal);color:var(--teal)}
 .skill-list{display:flex;flex-direction:column;gap:16px}
 .skill-row{display:grid;grid-template-columns:1fr auto;gap:6px}
 .skill-name{font-size:.9rem;color:var(--text);font-weight:500}
@@ -298,21 +322,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
   border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:9px;
   transition:all .2s}
 .pcard.built{border-top:2px solid var(--teal)}
-.pcard.built:hover{box-shadow:var(--glow-lg);border-color:rgba(25,230,212,.35);transform:translateY(-3px)}
+.pcard.built:hover{box-shadow:var(--glow-lg);border-color:rgba(139,92,246,.35);transform:translateY(-3px)}
 .pcard.ph{border-style:dashed;border-color:rgba(255,255,255,.05);opacity:.35}
 .pbadge{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;
   font-weight:600;letter-spacing:.07em;text-transform:uppercase;
   padding:3px 9px;border-radius:var(--pill);width:fit-content}
-.pb-built{background:rgba(25,230,212,.1);color:var(--teal);border:1px solid rgba(25,230,212,.25)}
+.pb-built{background:rgba(139,92,246,.1);color:var(--teal);border:1px solid rgba(139,92,246,.25)}
 .pb-soon{background:rgba(123,137,157,.08);color:var(--muted);border:1px solid rgba(123,137,157,.12)}
 .pcard h3{font-size:.97rem;font-weight:600;color:var(--text);line-height:1.3}
 .pcard p{font-size:.82rem;color:var(--muted);line-height:1.65;flex:1}
 .plinks{display:flex;gap:7px;margin-top:6px;flex-wrap:wrap}
 .plink{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;
-  color:var(--teal);background:rgba(25,230,212,.06);
-  border:1px solid rgba(25,230,212,.18);padding:5px 11px;
+  color:var(--teal);background:rgba(139,92,246,.06);
+  border:1px solid rgba(139,92,246,.18);padding:5px 11px;
   border-radius:var(--pill);cursor:pointer;transition:all .15s;font-family:var(--font)}
-.plink:hover{background:rgba(25,230,212,.15);border-color:var(--teal);box-shadow:var(--glow-sm)}
+.plink:hover{background:rgba(139,92,246,.15);border-color:var(--teal);box-shadow:var(--glow-sm)}
 .plink.off{color:var(--muted);background:transparent;
   border-color:rgba(255,255,255,.05);cursor:not-allowed;pointer-events:none;opacity:.45}
 
@@ -322,7 +346,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .feat-card{background:var(--card-grad);border:1px solid var(--border);
   border-radius:var(--r);padding:26px;transition:all .2s;
   display:flex;flex-direction:column}
-.feat-card:hover{border-color:rgba(25,230,212,.3);box-shadow:var(--glow-sm);transform:translateY(-2px)}
+.feat-card:hover{border-color:rgba(139,92,246,.3);box-shadow:var(--glow-sm);transform:translateY(-2px)}
 .feat-card h3{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:4px}
 .feat-card .feat-sub{font-size:.78rem;color:var(--teal);margin-bottom:12px;font-weight:500}
 .feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -331,10 +355,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .feat-card p{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:16px}
 .feat-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
 .feat-btn{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;
-  color:var(--teal);background:rgba(25,230,212,.07);border:1px solid rgba(25,230,212,.2);
+  color:var(--teal);background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.2);
   padding:6px 13px;border-radius:var(--pill);text-decoration:none;
   transition:all .18s;font-family:var(--font)}
-.feat-btn:hover{background:rgba(25,230,212,.15);border-color:var(--teal);box-shadow:var(--glow-sm)}
+.feat-btn:hover{background:rgba(139,92,246,.15);border-color:var(--teal);box-shadow:var(--glow-sm)}
 .feat-btn-primary{background:var(--teal);color:var(--bg);border-color:var(--teal)}
 .feat-btn-primary:hover{opacity:.88;box-shadow:var(--glow-lg)}
 
@@ -349,7 +373,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
   box-shadow:var(--glow-sm);border:2px solid var(--bg)}
 .tcard{background:var(--card-grad);border:1px solid var(--border);
   border-radius:var(--r);padding:20px 22px;transition:all .2s}
-.tcard:hover{border-color:rgba(25,230,212,.25);box-shadow:var(--glow-sm)}
+.tcard:hover{border-color:rgba(139,92,246,.25);box-shadow:var(--glow-sm)}
 .tmeta{display:flex;justify-content:space-between;align-items:flex-start;
   gap:12px;margin-bottom:6px;flex-wrap:wrap}
 .ttitle{font-size:.95rem;font-weight:600;color:var(--text)}
@@ -368,23 +392,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
 .cfbtn{background:var(--bg-sec);border:1px solid var(--border);color:var(--muted);
   font-family:var(--font);font-size:.78rem;font-weight:500;
   padding:6px 15px;border-radius:var(--pill);cursor:pointer;transition:all .2s}
-.cfbtn.on{background:rgba(25,230,212,.1);border-color:var(--teal);color:var(--teal)}
+.cfbtn.on{background:rgba(139,92,246,.1);border-color:var(--teal);color:var(--teal)}
 .cfbtn:hover:not(.on){color:var(--text)}
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
 .ccard{background:var(--card-grad);border:1px solid var(--border);
   border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:12px;
   transition:all .2s}
-.ccard:hover{border-color:rgba(25,230,212,.25);box-shadow:var(--glow-sm);transform:translateY(-2px)}
+.ccard:hover{border-color:rgba(139,92,246,.25);box-shadow:var(--glow-sm);transform:translateY(-2px)}
 .ccard.hidden{display:none}
-.cicon{width:38px;height:38px;min-width:38px;background:rgba(25,230,212,.07);
-  border:1px solid rgba(25,230,212,.15);border-radius:9px;
+.cicon{width:38px;height:38px;min-width:38px;background:rgba(139,92,246,.07);
+  border:1px solid rgba(139,92,246,.15);border-radius:9px;
   display:flex;align-items:center;justify-content:center;font-size:1rem}
 .cname{font-size:.8rem;font-weight:600;color:var(--text);line-height:1.3}
 .ctype-lbl{font-size:.68rem;color:var(--muted);margin-top:2px}
 .cbadge{font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   padding:2px 7px;border-radius:var(--pill)}
-.cbadge.cert{background:rgba(25,230,212,.1);color:var(--teal);border:1px solid rgba(25,230,212,.2)}
-.cbadge.doc{background:rgba(141,82,224,.1);color:var(--purple);border:1px solid rgba(141,82,224,.2)}
+.cbadge.cert{background:rgba(139,92,246,.1);color:var(--teal);border:1px solid rgba(139,92,246,.2)}
+.cbadge.doc{background:rgba(125,99,255,.1);color:var(--purple);border:1px solid rgba(125,99,255,.2)}
 .cbadge.vid{background:rgba(38,217,113,.1);color:var(--green);border:1px solid rgba(38,217,113,.2)}
 
 /* CONTACT */
@@ -399,7 +423,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
   color:var(--muted);text-decoration:none;font-size:.88rem;
   padding:10px 16px;border:1px solid var(--border);border-radius:10px;
   background:var(--bg-sec);transition:all .2s}
-.crow:hover{border-color:rgba(25,230,212,.3);color:var(--text);box-shadow:var(--glow-sm)}
+.crow:hover{border-color:rgba(139,92,246,.3);color:var(--text);box-shadow:var(--glow-sm)}
 
 /* FOOTER */
 footer{text-align:center;padding:22px 48px;color:var(--muted);
@@ -422,7 +446,7 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
   transition:transform .26s cubic-bezier(.22,.68,0,1.2);
   box-shadow:0 32px 80px rgba(0,0,0,.55),var(--glow-lg)}
 .modal-bg.open .mbox{transform:translateY(0) scale(1)}
-.mhead{background:linear-gradient(135deg,rgba(25,230,212,.07),rgba(141,82,224,.07));
+.mhead{background:linear-gradient(135deg,rgba(139,92,246,.07),rgba(125,99,255,.07));
   border-bottom:1px solid var(--border);padding:22px 26px 18px;
   position:sticky;top:0;z-index:5;border-radius:16px 16px 0 0;backdrop-filter:blur(8px)}
 .mhead-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
@@ -439,8 +463,8 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 .ms-list{display:flex;flex-direction:column;gap:20px}
 .ms{display:flex;gap:14px;align-items:flex-start}
 .ms-num{width:32px;height:32px;min-width:32px;
-  background:linear-gradient(135deg,rgba(25,230,212,.12),rgba(141,82,224,.12));
-  border:1px solid rgba(25,230,212,.28);border-radius:50%;
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(125,99,255,.12));
+  border:1px solid rgba(139,92,246,.28);border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-size:.86rem;font-weight:700;color:var(--teal);margin-top:1px}
 .ms-body h4{font-size:.93rem;font-weight:600;color:var(--text);margin-bottom:4px}
@@ -463,8 +487,8 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 .mvibe-row{display:flex;flex-wrap:wrap;gap:7px}
 .mvibe{background:var(--bg-sec);color:var(--text);font-size:11px;font-weight:500;
   padding:5px 12px;border-radius:var(--pill);border:1px solid var(--border)}
-.mvibe.tl{background:rgba(25,230,212,.1);color:var(--teal);border-color:rgba(25,230,212,.25)}
-.mvibe.pu{background:rgba(141,82,224,.1);color:var(--purple);border-color:rgba(141,82,224,.25)}
+.mvibe.tl{background:rgba(139,92,246,.1);color:var(--teal);border-color:rgba(139,92,246,.25)}
+.mvibe.pu{background:rgba(125,99,255,.1);color:var(--purple);border-color:rgba(125,99,255,.25)}
 .mbtn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
 .mbd{display:inline-flex;align-items:center;font-family:var(--font);
   font-size:12.5px;font-weight:600;padding:7px 18px;border-radius:var(--r);cursor:default}
@@ -497,7 +521,7 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
   scroll-snap-align:start;background:var(--bg-card);display:block;text-decoration:none}
 .vcard.land{width:265px;aspect-ratio:16/9}
 .vcard.port{width:150px;aspect-ratio:9/16}
-.vcard:hover{transform:scale(1.06);box-shadow:0 0 32px rgba(25,230,212,.3),0 16px 48px rgba(0,0,0,.5);z-index:10}
+.vcard:hover{transform:scale(1.06);box-shadow:0 0 32px rgba(139,92,246,.3),0 16px 48px rgba(0,0,0,.5);z-index:10}
 .vthumb{width:100%;height:100%;object-fit:cover;display:block;
   transition:filter .28s}
 .vcard:hover .vthumb{filter:brightness(.65)}
@@ -509,13 +533,13 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 .vplay{position:absolute;top:50%;left:50%;pointer-events:none;
   transform:translate(-50%,-50%) scale(.75);
   width:46px;height:46px;
-  background:rgba(25,230,212,.95);border-radius:50%;
+  background:rgba(139,92,246,.95);border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   opacity:0;transition:opacity .22s,transform .28s}
 .vcard:hover .vplay{opacity:1;transform:translate(-50%,-50%) scale(1)}
 .vplay-tri{width:0;height:0;border-style:solid;pointer-events:none;
   border-width:8px 0 8px 16px;
-  border-color:transparent transparent transparent #0c0e12;margin-left:3px}
+  border-color:transparent transparent transparent #000000;margin-left:3px}
 .vtag{font-size:.58rem;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;color:var(--teal);margin-bottom:4px}
 .vtitle{font-size:.72rem;font-weight:600;color:var(--text);line-height:1.35}
@@ -527,21 +551,127 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 
+/* ══════════════════════════════════════════
+   LIGHT SECTION SYSTEM
+══════════════════════════════════════════ */
+/* Full-bleed light background technique */
+.sec-light{
+  --text:#0f1923;
+  --muted:#4a5872;
+  --border:#dce6f0;
+  --bg-sec:#edf3fa;
+  --bg-card:#ffffff;
+  --card-grad:linear-gradient(145deg,#ffffff,#f5faff);
+  --glow-sm:0 0 20px rgba(139,92,246,.12);
+  position:relative;
+}
+.sec-light::before{
+  content:'';position:absolute;top:0;left:50%;
+  transform:translateX(-50%);width:100vw;height:100%;
+  background:var(--sl-bg,#f5faff);z-index:0;pointer-events:none;
+}
+.sec-light>*{position:relative;z-index:1}
+
+/* Light section text overrides */
+.sec-light .h2{color:var(--text)}
+.sec-light .about-bio{color:var(--muted)}
+.sec-light .about-bio strong{color:#0f1923}
+.sec-light .tools-lbl{color:var(--muted)}
+.sec-light .tool{background:#ffffff;border-color:var(--border);color:#0f1923}
+.sec-light .tool:hover{border-color:var(--teal)}
+.sec-light .edu-card{background:#ffffff;border-color:var(--border)}
+.sec-light .edu-school{color:#0f1923}
+.sec-light .feat-card{background:#ffffff;border-color:var(--border)}
+.sec-light .feat-card h3{color:#0f1923}
+.sec-light .feat-card .feat-sub{color:var(--teal)}
+.sec-light .feat-card p{color:var(--muted)}
+.sec-light .ftag{background:#edf3fa;border-color:var(--border);color:#4a5872}
+.sec-light .ccard{background:#ffffff;border-color:var(--border)}
+.sec-light .cname{color:#0f1923}
+.sec-light .cfbtn{background:#edf3fa;border-color:var(--border);color:#4a5872}
+.sec-light .cfbtn.on{background:rgba(139,92,246,.1);border-color:var(--teal);color:var(--teal)}
+
+/* Warm about section */
+#about{--sl-bg:#fffcf5}
+/* Cool featured section */
+#featured{--sl-bg:#f5f9ff}
+/* Soft blue certs section */
+#certifications{--sl-bg:#f0f6ff}
+
+/* ══════════════════════════════════════════
+   ALIEN TECH 5055 GRAPHICS
+══════════════════════════════════════════ */
+
+/* Shared decoration wrapper */
+.tech-deco{position:absolute;pointer-events:none;z-index:0;overflow:hidden}
+.tech-deco svg{display:block}
+
+/* Hero alien graphics */
+.hero-hex-grid{top:0;right:0;width:420px;height:420px;opacity:.06}
+.hero-orbit{bottom:80px;right:20px;width:220px;height:220px;opacity:.1}
+
+/* Section alien graphics */
+.deco-tl{top:-20px;left:-40px;opacity:.07}
+.deco-tr{top:-20px;right:-40px;opacity:.07}
+.deco-br{bottom:-20px;right:-40px;opacity:.07}
+.deco-bl{bottom:-20px;left:-40px;opacity:.07}
+.deco-center{top:50%;left:50%;transform:translate(-50%,-50%);opacity:.045}
+
+/* Floating orbital ring animation */
+@keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes orbitSpinR{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes floatDrift{
+  0%,100%{transform:translateY(0) translateX(0)}
+  33%{transform:translateY(-12px) translateX(6px)}
+  66%{transform:translateY(8px) translateX(-5px)}
+}
+@keyframes nodePulse{
+  0%,100%{opacity:.3;r:2}
+  50%{opacity:.9;r:3.5}
+}
+@keyframes scanLine{
+  0%{transform:translateY(-100%);opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.6}
+  100%{transform:translateY(1000%);opacity:0}
+}
+@keyframes hexFloat{
+  0%,100%{transform:translateY(0) scale(1);opacity:.06}
+  50%{transform:translateY(-18px) scale(1.04);opacity:.11}
+}
+@keyframes dashDraw{
+  to{stroke-dashoffset:0}
+}
+@keyframes radarSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+.orbit-ring-1{animation:orbitSpin 18s linear infinite;transform-origin:center}
+.orbit-ring-2{animation:orbitSpinR 26s linear infinite;transform-origin:center}
+.orbit-ring-3{animation:orbitSpin 40s linear infinite;transform-origin:center}
+.hex-float{animation:hexFloat 7s ease-in-out infinite}
+.hex-float:nth-child(2){animation-delay:1.5s}
+.hex-float:nth-child(3){animation-delay:3s}
+.drift-1{animation:floatDrift 9s ease-in-out infinite}
+.drift-2{animation:floatDrift 12s ease-in-out infinite;animation-delay:2s}
+.scan-beam{animation:scanLine 5s linear infinite}
+
 /* ── SCROLL PROGRESS BAR ── */
 #progress-bar{position:fixed;top:0;left:0;height:2px;width:0%;z-index:9999;
   background:linear-gradient(90deg,var(--teal),var(--purple),var(--gold));
-  border-radius:0 2px 2px 0;box-shadow:0 0 10px rgba(25,230,212,.7);
+  border-radius:0 2px 2px 0;box-shadow:0 0 10px rgba(139,92,246,.7);
   transition:width .08s linear;pointer-events:none}
 
 /* ── CUSTOM CURSOR ── */
 .cursor-glow{position:fixed;pointer-events:none;z-index:9997;border-radius:50%;
   width:24px;height:24px;
-  background:radial-gradient(circle,rgba(25,230,212,.12) 0%,rgba(25,230,212,.03) 60%,transparent 75%);
+  background:radial-gradient(circle,rgba(139,92,246,.12) 0%,rgba(139,92,246,.03) 60%,transparent 75%);
   transform:translate(-50%,-50%);transition:left .14s ease,top .14s ease,opacity .3s,width .2s,height .2s;
   mix-blend-mode:screen;will-change:left,top}
 .cursor-dot{position:fixed;pointer-events:none;z-index:9998;border-radius:50%;
   width:4px;height:4px;background:var(--teal);
-  box-shadow:0 0 5px rgba(25,230,212,.6);
+  box-shadow:0 0 5px rgba(139,92,246,.6);
   transform:translate(-50%,-50%);transition:left .04s linear,top .04s linear;
   will-change:left,top}
 
@@ -549,7 +679,7 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 .nav-hamburger{display:none;background:none;border:1px solid var(--border);
   color:var(--muted);padding:7px 11px;border-radius:7px;cursor:pointer;
   font-size:1.1rem;transition:all .2s;line-height:1}
-.nav-hamburger:hover{color:var(--text);border-color:rgba(25,230,212,.4)}
+.nav-hamburger:hover{color:var(--text);border-color:rgba(139,92,246,.4)}
 .nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;
   background:rgba(12,14,18,.98);backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);z-index:190;
@@ -558,8 +688,8 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 .nav-mobile a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500;
   padding:11px 14px;border-radius:8px;transition:all .18s;display:block}
 .nav-mobile a:hover,.nav-mobile a.active{color:var(--text);background:var(--bg-sec)}
-.nav-mobile .nm-cta{background:rgba(25,230,212,.1);color:var(--teal)!important;
-  border:1px solid rgba(25,230,212,.25);text-align:center;margin-top:6px;
+.nav-mobile .nm-cta{background:rgba(139,92,246,.1);color:var(--teal)!important;
+  border:1px solid rgba(139,92,246,.25);text-align:center;margin-top:6px;
   border-radius:var(--pill)!important;font-weight:600!important}
 
 /* ── HERO LOAD ANIMATION ── */
@@ -569,19 +699,19 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
 /* ── SKILL BAR GLOW UPGRADE ── */
 .skill-fill::after{content:'';position:absolute;right:-2px;top:50%;
   transform:translateY(-50%);width:9px;height:9px;border-radius:50%;
-  background:var(--teal);box-shadow:0 0 10px var(--teal),0 0 22px rgba(25,230,212,.55);
+  background:var(--teal);box-shadow:0 0 10px var(--teal),0 0 22px rgba(139,92,246,.55);
   transition:opacity .4s .95s;opacity:0}
 .skill-fill.lit::after{opacity:1}
 
 /* ── COMING SOON CARD SHIMMER + LOCK ── */
 .pcard.coming{position:relative;overflow:hidden}
 .pcard.coming::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(110deg,transparent 25%,rgba(141,82,224,.05) 50%,transparent 75%);
+  background:linear-gradient(110deg,transparent 25%,rgba(125,99,255,.05) 50%,transparent 75%);
   background-size:250% 100%;animation:csshimmer 3.5s infinite linear;z-index:0}
 @keyframes csshimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .pcard.coming>*{position:relative;z-index:1}
-.pcard.coming .pbadge{background:rgba(141,82,224,.1);color:var(--purple);
-  border:1px solid rgba(141,82,224,.22)}
+.pcard.coming .pbadge{background:rgba(125,99,255,.1);color:var(--purple);
+  border:1px solid rgba(125,99,255,.22)}
 
 /* ── CARD TILT (applied via JS) ── */
 .tilt-wrap{transform-style:preserve-3d;transition:transform .08s linear}
@@ -596,7 +726,7 @@ footer{text-align:center;padding:22px 48px;color:var(--muted);
   padding:11px 15px;outline:none;resize:none;
   transition:border-color .2s,box-shadow .2s,background .2s}
 .cfield input:focus,.cfield textarea:focus{
-  border-color:var(--teal);box-shadow:0 0 0 3px rgba(25,230,212,.1);
+  border-color:var(--teal);box-shadow:0 0 0 3px rgba(139,92,246,.1);
   background:rgba(35,39,47,1)}
 .cfield .cerr{font-size:.7rem;color:#f87171;margin-top:4px;display:none}
 .cfield.bad .cerr{display:block}
@@ -672,6 +802,234 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
   .vcard.land{width:210px}
   .timeline{padding-left:18px}
 }
+
+/* ══════════════════════════════════════
+   SYSTEM 1 × SYSTEM 2 — NEW DESIGN RULES
+══════════════════════════════════════ */
+
+/* Body — pure black base, monospace labels inherit */
+body{background:var(--bg);cursor:none}
+
+/* Blueprint grid texture on hero + dark sections */
+#home::after,#skills::after,#experience::after,#contact::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(var(--border-dark) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border-dark) 1px,transparent 1px);
+  background-size:60px 60px;
+  opacity:.18;
+}
+
+/* Rainbow gradient border utility */
+.rainbow-border{
+  position:relative;
+}
+.rainbow-border::before{
+  content:'';position:absolute;inset:-1.5px;border-radius:inherit;
+  background:var(--rainbow);z-index:-1;
+  opacity:0;transition:opacity .25s;
+}
+.rainbow-border:hover::before{opacity:1}
+
+/* NAV — System 1 precision */
+nav{background:rgba(0,0,0,.92);border-bottom:1px solid rgba(255,255,255,0.08)}
+.nav-logo{font-weight:600;letter-spacing:-.02em}
+.nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.nav-cta{
+  background:#8B5CF6!important;color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border-radius:64px!important;
+  font-family:var(--mono)!important;
+  font-size:.7rem!important;letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+.nav-cta:hover{box-shadow:0 0 24px rgba(139,92,246,.5)!important}
+
+/* EYEBROW — Roboto Mono, uppercase, numbered */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.65rem;
+  letter-spacing:.18em;
+  color:#8B5CF6;
+}
+.eyebrow::before{background:#CA8D35}
+
+/* HEADINGS — System 1: medium weight, tight tracking */
+.h2{font-weight:500;letter-spacing:-.02em}
+.h2 .g{background:var(--rainbow);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+
+/* SECTION NUMBERS — System 2 */
+.sec-num{
+  font-family:var(--mono);font-size:.65rem;color:var(--border-dark);
+  letter-spacing:.1em;margin-bottom:6px;display:block;
+}
+
+/* CARDS — System 1: stone-950, white border */
+.pcard,.feat-card,.tcard,.edu-card,.ccard,.contact-wrap{
+  background:#1C1917;
+  border-color:rgba(255,255,255,0.10);
+}
+.pcard.built:hover,.feat-card:hover{
+  border-color:rgba(139,92,246,.4);
+  box-shadow:0 0 0 1px rgba(139,92,246,.2),var(--glow-sm);
+}
+/* Rainbow sweep on built card hover */
+.pcard.built{position:relative;overflow:hidden}
+.pcard.built::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:2px;
+  background:var(--rainbow);
+  transition:left .4s ease;
+}
+.pcard.built:hover::after{left:0}
+
+/* BUTTONS — System 1 */
+.btn-p{background:#8B5CF6;color:#fff;border-radius:64px;font-family:var(--mono);
+  font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;border:none}
+.btn-p:hover{box-shadow:0 0 24px rgba(139,92,246,.55);transform:translateY(-1px)}
+.btn-o{
+  background:transparent;color:var(--text);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:64px;font-family:var(--mono);
+  font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+}
+.btn-o:hover{border-color:#8B5CF6;color:#8B5CF6}
+
+/* TAGS — Roboto Mono, uppercase, violet tint */
+.htag,.ftag,.tool{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(139,92,246,.08);border-color:rgba(139,92,246,.2);color:#8B5CF6;
+}
+.htag{color:var(--muted);background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
+
+/* SKILL TABS */
+.stab{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:4px}
+.stab.on{background:rgba(139,92,246,.12);border-color:#8B5CF6;color:#8B5CF6}
+
+/* CERT FILTER */
+.cfbtn{font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;border-radius:4px}
+.cfbtn.on{background:rgba(139,92,246,.12);border-color:#8B5CF6;color:#8B5CF6}
+
+/* BADGE — System 2 style */
+.pbadge.pb-built{background:rgba(139,92,246,.1);color:#8B5CF6;border-color:rgba(139,92,246,.25)}
+.pbadge.pb-soon{background:rgba(255,255,255,.04);color:var(--muted);border-color:rgba(255,255,255,.08)}
+
+/* PERIOD BADGE */
+.tperiod{font-family:var(--mono);font-size:.65rem;letter-spacing:.06em}
+
+/* VIDEO TAGS */
+.vtag{font-family:var(--mono)}
+
+/* FEAT BTN */
+.feat-btn{font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:4px;color:#8B5CF6;background:rgba(139,92,246,.07);border-color:rgba(139,92,246,.2)}
+.feat-btn-primary{background:#8B5CF6;color:#000;border-color:#8B5CF6}
+.feat-btn-primary:hover{opacity:.88;box-shadow:0 0 20px rgba(139,92,246,.5)}
+
+/* PLINK */
+.plink{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  color:#8B5CF6;background:rgba(139,92,246,.07);border-color:rgba(139,92,246,.2);border-radius:4px}
+
+/* PHOTO FRAME — rainbow border */
+.photo-border{background:var(--rainbow)!important;animation:borderSpin 6s linear infinite}
+
+/* HERO NAME — rainbow gradient */
+.hero-name{
+  background:var(--rainbow)!important;
+  background-size:300% 300%!important;
+  -webkit-background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;
+  background-clip:text!important;
+  animation:borderSpin 6s linear infinite!important;
+}
+
+/* STAT BAR */
+.hero-stats{background:rgba(28,25,23,.7);border-color:rgba(255,255,255,.08)}
+.hstat{border-color:rgba(255,255,255,.06)}
+.hstat-n{color:#8B5CF6}
+
+/* SCROLL INDICATOR */
+.scroll-indicator span{color:#8B5CF6}
+.scroll-arrow{border-color:#8B5CF6}
+
+/* PROGRESS BAR */
+#progress-bar{background:var(--rainbow)!important;background-size:300% 100%!important;
+  animation:borderSpin 3s linear infinite!important}
+
+/* CURSOR */
+.cursor-glow{background:radial-gradient(circle,rgba(139,92,246,.14) 0%,rgba(139,92,246,.04) 60%,transparent 75%)}
+.cursor-dot{background:#8B5CF6;box-shadow:0 0 6px rgba(139,92,246,.8)}
+
+/* TIMELINE */
+.timeline::before{background:linear-gradient(to bottom,#8B5CF6,#7D63FF,transparent)}
+.titem::before{background:#8B5CF6;box-shadow:0 0 8px rgba(139,92,246,.6)}
+.tcompany{color:#8B5CF6}
+.tbullets li::before{color:#8B5CF6}
+
+/* MODAL */
+.mlabel{color:#8B5CF6}
+.mhead{background:linear-gradient(135deg,rgba(139,92,246,.07),rgba(125,99,255,.07))}
+.ms-num{background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.25);color:#8B5CF6}
+
+/* CONTACT ROWS */
+.crow:hover{border-color:rgba(139,92,246,.35);box-shadow:0 0 16px rgba(139,92,246,.12)}
+
+/* FOOTER */
+footer{background:#0A090F;border-top:1px solid rgba(255,255,255,.07)}
+.footer-logo{background:var(--rainbow);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+.footer-col h4{color:#8B5CF6}
+
+/* LIGHT SECTION OVERRIDE — replace warm light with dark alternation */
+.sec-light{--sl-bg:#0A090F!important}
+.sec-light::before{background:#0A090F!important}
+.sec-light{
+  --text:#EFEFE5!important;
+  --muted:#888680!important;
+  --border:rgba(255,255,255,0.10)!important;
+  --bg-sec:#181818!important;
+  --bg-card:#1C1917!important;
+  --card-grad:linear-gradient(145deg,#1C1917,#111110)!important;
+}
+.sec-light .h2{color:#EFEFE5!important}
+.sec-light .about-bio{color:#888680!important}
+.sec-light .about-bio strong{color:#EFEFE5!important}
+.sec-light .tools-lbl{color:#888680!important}
+.sec-light .tool{background:#181818!important;border-color:rgba(255,255,255,.1)!important;color:#EFEFE5!important}
+.sec-light .edu-card{background:#1C1917!important;border-color:rgba(255,255,255,.1)!important}
+.sec-light .edu-school{color:#EFEFE5!important}
+.sec-light .feat-card{background:#1C1917!important;border-color:rgba(255,255,255,.1)!important}
+.sec-light .feat-card h3{color:#EFEFE5!important}
+.sec-light .feat-card p{color:#888680!important}
+.sec-light .ftag{background:rgba(139,92,246,.08)!important;border-color:rgba(139,92,246,.2)!important;color:#8B5CF6!important}
+.sec-light .ccard{background:#1C1917!important;border-color:rgba(255,255,255,.1)!important}
+.sec-light .cname{color:#EFEFE5!important}
+
+/* ── DOT NAVIGATION — System 2 right-edge ── */
+#dotNav{
+  position:fixed;right:18px;top:50%;transform:translateY(-50%);
+  z-index:500;display:flex;flex-direction:column;gap:10px;
+}
+.dot-item{display:flex;align-items:center;justify-content:center;
+  width:16px;height:16px;text-decoration:none}
+.dot-pip{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--border-dark);
+  transition:all .2s ease;display:block;
+}
+.dot-item:hover .dot-pip{background:#8B5CF6;transform:scale(1.4)}
+.dot-item.active .dot-pip{background:#8B5CF6;width:7px;height:7px;
+  box-shadow:0 0 8px rgba(139,92,246,.7)}
+
+/* Form field focus — violet */
+.cfield input:focus,.cfield textarea:focus{
+  border-color:#8B5CF6!important;
+  box-shadow:0 0 0 3px rgba(139,92,246,.12)!important;
+}
+.cfield.good input,.cfield.good textarea{border-color:rgba(139,92,246,.45)!important}
+
+@media(max-width:900px){#dotNav{display:none}}
 </style>
 </head>
 <body>
@@ -681,6 +1039,7 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 <div class="cursor-dot" id="cursorDot"></div>
 
 <canvas id="particles"></canvas>
+<div id="dotNav" aria-label="Section navigation"></div>
 
 <!-- NAV -->
 <nav>
@@ -711,7 +1070,47 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 <main>
 
 <!-- HERO -->
-<section id="home">
+<section id="home" style="position:relative;overflow:hidden">
+  <!-- Hexagonal grid top-right -->
+  <div class="tech-deco" style="top:-20px;right:-60px;width:460px;height:460px;opacity:.055">
+    <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hexPat" x="0" y="0" width="52" height="60" patternUnits="userSpaceOnUse">
+          <polygon points="26,2 50,15 50,44 26,57 2,44 2,15" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="460" height="460" fill="url(#hexPat)" class="hex-float"/>
+    </svg>
+  </div>
+  <!-- Large orbital ring around hero area -->
+  <div class="tech-deco" style="bottom:-100px;right:-100px;width:500px;height:500px;opacity:.06">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(250,250)">
+        <ellipse rx="200" ry="80" stroke="#8B5CF6" stroke-width="1" fill="none" transform="rotate(-20)" class="orbit-ring-1"/>
+        <ellipse rx="160" ry="64" stroke="#7D63FF" stroke-width=".8" fill="none" transform="rotate(30)" class="orbit-ring-2"/>
+        <ellipse rx="120" ry="48" stroke="#CA8D35" stroke-width=".6" fill="none" transform="rotate(5)" class="orbit-ring-3"/>
+        <circle r="6" fill="#8B5CF6" cx="200" cy="0" transform="rotate(-20)" class="orbit-ring-1"/>
+        <circle r="5" fill="#7D63FF" cx="-160" cy="0" transform="rotate(30)" class="orbit-ring-2"/>
+        <circle r="4" fill="#CA8D35" cx="0" cy="-48" transform="rotate(5)" class="orbit-ring-3"/>
+      </g>
+    </svg>
+  </div>
+  <!-- Left side alien coordinates -->
+  <div class="tech-deco" style="left:-30px;top:30%;width:80px;height:300px;opacity:.06">
+    <svg viewBox="0 0 80 300" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#8B5CF6" stroke-width=".8" fill="none" font-family="monospace" font-size="8" fill="#8B5CF6">
+        <line x1="60" y1="0" x2="60" y2="300"/>
+        <line x1="55" y1="30" x2="65" y2="30"/>
+        <line x1="55" y1="80" x2="65" y2="80"/>
+        <line x1="55" y1="130" x2="65" y2="130"/>
+        <line x1="55" y1="180" x2="65" y2="180"/>
+        <line x1="55" y1="230" x2="65" y2="230"/>
+        <text x="30" y="33" fill="#8B5CF6" opacity=".6">5055</text>
+        <text x="30" y="83" fill="#7D63FF" opacity=".6">A.I.</text>
+        <text x="26" y="133" fill="#CA8D35" opacity=".6">NG-01</text>
+      </g>
+    </svg>
+  </div>
   <div class="hero-inner">
     <div class="hero-grid">
       <div class="hero-left">
@@ -779,9 +1178,39 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="sec">
+<section id="about" class="sec sec-light">
+  <!-- Circuit trace decoration -->
+  <div class="tech-deco deco-tr" style="width:340px;height:340px">
+    <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#8B5CF6" stroke-width="1" fill="none" opacity=".9">
+        <path d="M280 20 L280 80 L200 80 L200 140 L140 140 L140 200" stroke-dasharray="6 4" class="drift-1"/>
+        <path d="M320 60 L320 120 L260 120 L260 180 L180 180" stroke-dasharray="4 6" class="drift-2"/>
+        <circle cx="280" cy="20" r="4" fill="#8B5CF6" opacity=".7"/>
+        <circle cx="200" cy="80" r="3" fill="#8B5CF6" opacity=".5"/>
+        <circle cx="140" cy="140" r="4" fill="#7D63FF" opacity=".6"/>
+        <circle cx="260" cy="120" r="3" fill="#CA8D35" opacity=".5"/>
+        <rect x="272" y="12" width="16" height="16" rx="2" fill="none" stroke="#8B5CF6" opacity=".4"/>
+        <rect x="252" y="112" width="16" height="16" rx="2" fill="none" stroke="#7D63FF" opacity=".3"/>
+      </g>
+      <g fill="#8B5CF6" opacity=".15" class="hex-float">
+        <polygon points="310,260 330,270 330,290 310,300 290,290 290,270"/>
+        <polygon points="270,300 285,308 285,324 270,332 255,324 255,308"/>
+      </g>
+    </svg>
+  </div>
+  <!-- Bottom left decoration -->
+  <div class="tech-deco deco-bl" style="width:280px;height:200px">
+    <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#7D63FF" stroke-width="1" fill="none" opacity=".8">
+        <path d="M20 180 L80 180 L80 120 L140 120 L140 60 L200 60" stroke-dasharray="5 5"/>
+        <circle cx="80" cy="180" r="3" fill="#7D63FF" opacity=".6"/>
+        <circle cx="140" cy="120" r="3" fill="#8B5CF6" opacity=".5"/>
+        <circle cx="200" cy="60" r="4" fill="#CA8D35" opacity=".5"/>
+      </g>
+    </svg>
+  </div>
   <div class="eyebrow rv">About me</div>
-  <h2 class="h2 rv sc">Who is <span style="background:linear-gradient(135deg,#19e6d4,#ddc77c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Samuel King?</span></h2>
+  <h2 class="h2 rv sc">Who is <span style="background:linear-gradient(135deg,#8B5CF6,#CA8D35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Samuel King?</span></h2>
   <div class="about-grid">
     <div class="rv d1">
       <p class="about-bio">Honestly? I'm someone who looks at a broken process and can't leave it alone. Whether it's an inventory system running at 60% accuracy or a community that hasn't grown in months — I have to figure out what's wrong and build something better. That instinct has led me to some pretty interesting places: a <strong>98% accurate AI inventory tracker</strong>, ClearFlow (a cashflow dashboard that helped small businesses make decisions <strong>69% faster</strong>), and growing a volunteer community from <strong>12 to 46 people</strong> just by being intentional about communication.</p>
@@ -816,7 +1245,7 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
           <span class="edu-gpa">GPA 3.9/4.0</span>
         </div>
       </div>
-      <div style="background:linear-gradient(135deg,rgba(25,230,212,.06),rgba(141,82,224,.06));border:1px solid var(--border);border-radius:var(--r);padding:20px 22px">
+      <div style="background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(125,99,255,.06));border:1px solid var(--border);border-radius:var(--r);padding:20px 22px">
         <div style="font-size:.7rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px">Key achievements</div>
         <div style="display:flex;flex-direction:column;gap:8px">
           <div style="font-size:.83rem;color:var(--muted)"><span style="color:var(--teal);font-weight:600">98%</span> — AI-enabled inventory tracking accuracy</div>
@@ -830,7 +1259,33 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="sec">
+<section id="skills" class="sec" style="position:relative;overflow:hidden">
+  <!-- Neural network background -->
+  <div class="tech-deco" style="right:-60px;top:0;width:380px;height:100%;opacity:.07">
+    <svg viewBox="0 0 380 600" xmlns="http://www.w3.org/2000/svg" height="100%">
+      <g stroke="#8B5CF6" stroke-width=".8" fill="none">
+        <!-- Layer connections -->
+        <line x1="60" y1="80" x2="200" y2="140"/><line x1="60" y1="80" x2="200" y2="220"/>
+        <line x1="60" y1="180" x2="200" y2="140"/><line x1="60" y1="180" x2="200" y2="300"/>
+        <line x1="60" y1="280" x2="200" y2="220"/><line x1="60" y1="280" x2="200" y2="380"/>
+        <line x1="60" y1="380" x2="200" y2="300"/><line x1="60" y1="380" x2="200" y2="460"/>
+        <line x1="200" y1="140" x2="320" y2="180"/><line x1="200" y1="220" x2="320" y2="180"/>
+        <line x1="200" y1="300" x2="320" y2="320"/><line x1="200" y1="380" x2="320" y2="320"/>
+        <line x1="200" y1="460" x2="320" y2="420"/>
+      </g>
+      <g fill="#8B5CF6">
+        <circle cx="60" cy="80" r="5" opacity=".9"/><circle cx="60" cy="180" r="5" opacity=".7"/>
+        <circle cx="60" cy="280" r="5" opacity=".9"/><circle cx="60" cy="380" r="5" opacity=".6"/>
+        <circle cx="200" cy="140" r="6" opacity=".9"/><circle cx="200" cy="220" r="6" opacity=".7"/>
+        <circle cx="200" cy="300" r="6" opacity=".9"/><circle cx="200" cy="380" r="6" opacity=".7"/>
+        <circle cx="200" cy="460" r="6" opacity=".6"/>
+      </g>
+      <g fill="#7D63FF">
+        <circle cx="320" cy="180" r="7" opacity=".9"/><circle cx="320" cy="320" r="7" opacity=".8"/>
+        <circle cx="320" cy="420" r="7" opacity=".7"/>
+      </g>
+    </svg>
+  </div>
   <div class="eyebrow rv">Skills &amp; expertise</div>
   <h2 class="h2 rv sc">Core <span class="g">competencies</span></h2>
   <div class="skill-tabs rv d1" id="skillTabs"></div>
@@ -846,7 +1301,40 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 </section>
 
 <!-- FEATURED PORTFOLIO -->
-<section id="featured" class="sec">
+<section id="featured" class="sec sec-light" style="position:relative;overflow:hidden">
+  <!-- Orbital system top-right -->
+  <div class="tech-deco" style="top:-40px;right:-80px;width:360px;height:360px;opacity:.09">
+    <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(180,180)">
+        <!-- Orbits -->
+        <ellipse cx="0" cy="0" rx="70" ry="28" stroke="#8B5CF6" stroke-width="1" fill="none" transform="rotate(-25)" class="orbit-ring-1"/>
+        <ellipse cx="0" cy="0" rx="110" ry="44" stroke="#7D63FF" stroke-width=".8" fill="none" transform="rotate(15)" class="orbit-ring-2"/>
+        <ellipse cx="0" cy="0" rx="155" ry="62" stroke="#CA8D35" stroke-width=".6" fill="none" transform="rotate(-10)" class="orbit-ring-3"/>
+        <!-- Central body -->
+        <circle cx="0" cy="0" r="18" fill="none" stroke="#8B5CF6" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="10" fill="rgba(139,92,246,.15)"/>
+        <!-- Orbital bodies -->
+        <circle cx="70" cy="0" r="5" fill="#8B5CF6" opacity=".8" transform="rotate(-25)" class="orbit-ring-1"/>
+        <circle cx="-110" cy="0" r="7" fill="#7D63FF" opacity=".7" class="orbit-ring-2"/>
+        <circle cx="0" cy="-62" r="4" fill="#CA8D35" opacity=".8" class="orbit-ring-3"/>
+        <!-- Grid lines -->
+        <line x1="-170" y1="0" x2="170" y2="0" stroke="#8B5CF6" stroke-width=".4" stroke-dasharray="4 8" opacity=".4"/>
+        <line x1="0" y1="-170" x2="0" y2="170" stroke="#8B5CF6" stroke-width=".4" stroke-dasharray="4 8" opacity=".4"/>
+      </g>
+    </svg>
+  </div>
+  <!-- Bottom-left DNA strands -->
+  <div class="tech-deco" style="bottom:-30px;left:-50px;width:200px;height:200px;opacity:.07">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#7D63FF" stroke-width="1.2" fill="none">
+        <path d="M20 180 Q60 140 100 160 Q140 180 180 140" stroke-dasharray="5 3"/>
+        <path d="M20 160 Q60 120 100 140 Q140 160 180 120" stroke-dasharray="3 5"/>
+        <circle cx="100" cy="160" r="4" fill="#7D63FF" opacity=".6"/>
+        <circle cx="60" cy="140" r="3" fill="#8B5CF6" opacity=".5"/>
+        <circle cx="140" cy="180" r="3" fill="#CA8D35" opacity=".5"/>
+      </g>
+    </svg>
+  </div>
   <div class="eyebrow rv">Portfolio</div>
   <h2 class="h2 rv sc">Featured <span class="g">projects</span></h2>
   <div class="feat-grid">
@@ -898,14 +1386,98 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="sec">
+<section id="experience" class="sec" style="position:relative;overflow:hidden">
+  <!-- DNA helix right side -->
+  <div class="tech-deco" style="right:-30px;top:60px;width:120px;height:500px;opacity:.08">
+    <svg viewBox="0 0 120 500" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none">
+        <!-- Strand 1 -->
+        <path d="M20 0 Q80 50 20 100 Q80 150 20 200 Q80 250 20 300 Q80 350 20 400 Q80 450 20 500"
+          stroke="#8B5CF6" stroke-width="2"/>
+        <!-- Strand 2 -->
+        <path d="M100 0 Q40 50 100 100 Q40 150 100 200 Q40 250 100 300 Q40 350 100 400 Q40 450 100 500"
+          stroke="#7D63FF" stroke-width="2"/>
+        <!-- Rungs -->
+        <g stroke="#CA8D35" stroke-width="1" opacity=".7">
+          <line x1="20" y1="25" x2="100" y2="25"/>
+          <line x1="60" y1="50" x2="60" y2="50"/>
+          <line x1="20" y1="75" x2="100" y2="75"/>
+          <line x1="20" y1="125" x2="100" y2="125"/>
+          <line x1="20" y1="175" x2="100" y2="175"/>
+          <line x1="20" y1="225" x2="100" y2="225"/>
+          <line x1="20" y1="275" x2="100" y2="275"/>
+          <line x1="20" y1="325" x2="100" y2="325"/>
+          <line x1="20" y1="375" x2="100" y2="375"/>
+          <line x1="20" y1="425" x2="100" y2="425"/>
+          <line x1="20" y1="475" x2="100" y2="475"/>
+        </g>
+        <!-- Nodes -->
+        <g fill="#8B5CF6" opacity=".8">
+          <circle cx="20" cy="0" r="4"/><circle cx="20" cy="100" r="4"/>
+          <circle cx="20" cy="200" r="4"/><circle cx="20" cy="300" r="4"/>
+          <circle cx="20" cy="400" r="4"/>
+        </g>
+        <g fill="#7D63FF" opacity=".8">
+          <circle cx="100" cy="0" r="4"/><circle cx="100" cy="100" r="4"/>
+          <circle cx="100" cy="200" r="4"/><circle cx="100" cy="300" r="4"/>
+          <circle cx="100" cy="400" r="4"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <!-- Scanning beam -->
+  <div class="tech-deco" style="left:0;top:0;width:100%;height:100%;opacity:.03">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect width="1200" height="4" fill="url(#scanGrad)" class="scan-beam" y="100">
+        <defs>
+          <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="50%" stop-color="#8B5CF6"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+      </rect>
+    </svg>
+  </div>
   <div class="eyebrow rv">Work history</div>
   <h2 class="h2 rv sc">My <span class="g">experience</span></h2>
   <div class="timeline" id="timeline"></div>
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" class="sec">
+<section id="certifications" class="sec sec-light" style="position:relative;overflow:hidden">
+  <!-- Constellation map -->
+  <div class="tech-deco" style="top:20px;right:-60px;width:400px;height:400px;opacity:.09">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#8B5CF6" stroke-width=".8" fill="none" stroke-dasharray="3 5">
+        <line x1="60" y1="80" x2="140" y2="130"/>
+        <line x1="140" y1="130" x2="200" y2="90"/>
+        <line x1="200" y1="90" x2="280" y2="160"/>
+        <line x1="280" y1="160" x2="340" y2="120"/>
+        <line x1="140" y1="130" x2="160" y2="220"/>
+        <line x1="160" y1="220" x2="240" y2="250"/>
+        <line x1="240" y1="250" x2="300" y2="300"/>
+        <line x1="80" y1="280" x2="160" y2="220"/>
+        <line x1="80" y1="280" x2="120" y2="360"/>
+      </g>
+      <g fill="#8B5CF6">
+        <circle cx="60" cy="80" r="4" opacity=".9" class="hex-float"/>
+        <circle cx="140" cy="130" r="5" opacity=".8"/>
+        <circle cx="200" cy="90" r="3" opacity=".7" class="hex-float"/>
+        <circle cx="280" cy="160" r="5" opacity=".9"/>
+        <circle cx="340" cy="120" r="3" opacity=".6"/>
+        <circle cx="160" cy="220" r="4" opacity=".8"/>
+        <circle cx="240" cy="250" r="3" opacity=".7" class="hex-float"/>
+        <circle cx="300" cy="300" r="5" opacity=".8"/>
+        <circle cx="80" cy="280" r="4" opacity=".7"/>
+        <circle cx="120" cy="360" r="3" opacity=".5"/>
+      </g>
+      <g fill="#7D63FF">
+        <circle cx="200" cy="90" r="6" opacity=".3"/>
+        <circle cx="280" cy="160" r="8" opacity=".25"/>
+      </g>
+    </svg>
+  </div>
   <div class="eyebrow rv">Credentials</div>
   <h2 class="h2 rv sc">Certificates &amp; <span class="g">qualifications</span></h2>
   <div class="cert-filter rv" id="certFilter"></div>
@@ -913,7 +1485,39 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="sec" style="margin:0 auto">
+<section id="contact" class="sec" style="margin:0 auto;position:relative;overflow:hidden">
+  <!-- Radar rings top-right -->
+  <div class="tech-deco" style="top:-80px;right:-120px;width:400px;height:400px;opacity:.055">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(200,200)" stroke="#8B5CF6" stroke-width="1" fill="none">
+        <circle r="60" opacity=".9" class="drift-1"/>
+        <circle r="110" opacity=".6" class="drift-2"/>
+        <circle r="160" opacity=".4"/>
+        <circle r="200" opacity=".2"/>
+        <!-- Radar sweep -->
+        <line x1="0" y1="0" x2="200" y2="0" stroke="#8B5CF6" stroke-width="1.5" opacity=".5" class="orbit-ring-1"/>
+        <!-- Crosshair -->
+        <line x1="-210" y1="0" x2="210" y2="0" stroke-dasharray="4 8" opacity=".3"/>
+        <line x1="0" y1="-210" x2="0" y2="210" stroke-dasharray="4 8" opacity=".3"/>
+        <!-- Target blips -->
+        <circle cx="80" cy="-50" r="4" fill="#8B5CF6" opacity=".8"/>
+        <circle cx="-120" cy="60" r="3" fill="#CA8D35" opacity=".7"/>
+        <circle cx="40" cy="140" r="4" fill="#7D63FF" opacity=".6"/>
+      </g>
+    </svg>
+  </div>
+  <!-- Bottom left alien glyph -->
+  <div class="tech-deco" style="bottom:-40px;left:-40px;width:250px;height:250px;opacity:.05">
+    <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#7D63FF" stroke-width="1" fill="none">
+        <polygon points="125,10 230,70 230,180 125,240 20,180 20,70"/>
+        <polygon points="125,40 200,80 200,170 125,210 50,170 50,80"/>
+        <polygon points="125,70 170,95 170,155 125,180 80,155 80,95"/>
+        <circle cx="125" cy="125" r="20" stroke="#8B5CF6"/>
+        <circle cx="125" cy="125" r="8" fill="rgba(139,92,246,.15)" stroke="#8B5CF6"/>
+      </g>
+    </svg>
+  </div>
   <div class="eyebrow rv" style="text-align:center">Get in touch</div>
   <h2 class="h2 rv sc" style="text-align:center;margin-bottom:32px">Let's build <span class="g">something.</span></h2>
   <div class="contact-wrap rv d1">
@@ -1061,7 +1665,7 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
     dots.forEach(d=>{
       ctx.beginPath();
       ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
-      ctx.fillStyle = `rgba(25,230,212,${d.a})`;
+      ctx.fillStyle = `rgba(139,92,246,${d.a})`;
       ctx.fill();
       d.x+=d.vx; d.y+=d.vy;
       if(d.x<0||d.x>W) d.vx*=-1;
@@ -1076,7 +1680,7 @@ footer{background:var(--bg-card);border-top:1px solid var(--border);
           ctx.beginPath();
           ctx.moveTo(dots[i].x,dots[i].y);
           ctx.lineTo(dots[j].x,dots[j].y);
-          ctx.strokeStyle=`rgba(25,230,212,${(1-dist/120)*.06})`;
+          ctx.strokeStyle=`rgba(139,92,246,${(1-dist/120)*.06})`;
           ctx.lineWidth=.6;
           ctx.stroke();
         }
@@ -1235,38 +1839,38 @@ const POPUPS = {
     <div class="mdoc-sec">
       <div class="mdoc-h">Color palette</div>
       <div class="mswatches">
-        <div class="mswatch"><div class="mswatch-blk" style="background:#0c0e12"></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#000000"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Page BG</span>
-          <span class="mswatch-hex">#0c0e12</span><span class="mswatch-note">Base layer</span></div></div>
-        <div class="mswatch"><div class="mswatch-blk" style="background:#19e6d4"></div>
+          <span class="mswatch-hex">#000000</span><span class="mswatch-note">Base layer</span></div></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#8B5CF6"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Neon Teal</span>
-          <span class="mswatch-hex">#19e6d4</span><span class="mswatch-note">Primary CTA</span></div></div>
-        <div class="mswatch"><div class="mswatch-blk" style="background:#8d52e0"></div>
+          <span class="mswatch-hex">#8B5CF6</span><span class="mswatch-note">Primary CTA</span></div></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#7D63FF"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Neon Purple</span>
-          <span class="mswatch-hex">#8d52e0</span><span class="mswatch-note">Gradient/accent</span></div></div>
-        <div class="mswatch"><div class="mswatch-blk" style="background:#ddc77c"></div>
+          <span class="mswatch-hex">#7D63FF</span><span class="mswatch-note">Gradient/accent</span></div></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#CA8D35"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Gold</span>
-          <span class="mswatch-hex">#ddc77c</span><span class="mswatch-note">Rare — Sam's</span></div></div>
-        <div class="mswatch"><div class="mswatch-blk" style="background:#15181e;border:1px solid #272c35"></div>
+          <span class="mswatch-hex">#CA8D35</span><span class="mswatch-note">Rare — Sam's</span></div></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#1C1917;border:1px solid rgba(255,255,255,0.12)"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Card BG</span>
-          <span class="mswatch-hex">#15181e</span><span class="mswatch-note">Cards/panels</span></div></div>
-        <div class="mswatch"><div class="mswatch-blk" style="background:#e7ebef"></div>
+          <span class="mswatch-hex">#1C1917</span><span class="mswatch-note">Cards/panels</span></div></div>
+        <div class="mswatch"><div class="mswatch-blk" style="background:#EFEFE5"></div>
           <div class="mswatch-inf"><span class="mswatch-name">Text</span>
-          <span class="mswatch-hex">#e7ebef</span><span class="mswatch-note">Primary copy</span></div></div>
+          <span class="mswatch-hex">#EFEFE5</span><span class="mswatch-note">Primary copy</span></div></div>
       </div>
     </div>
     <div class="mdoc-sec">
       <div class="mdoc-h">Typography — Space Grotesk only</div>
       <div class="mtype-row">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#19e6d4,#8d52e0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Space Grotesk</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#8B5CF6,#7D63FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Space Grotesk</div>
         <div class="mtype-meta">H1 hero — 4rem, weight 700, gradient fill</div>
       </div>
       <div class="mtype-row">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#e7ebef">Body copy — clean, geometric, technical</div>
-        <div class="mtype-meta">Body — 1rem, weight 400, color #e7ebef</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#EFEFE5">Body copy — clean, geometric, technical</div>
+        <div class="mtype-meta">Body — 1rem, weight 400, color #EFEFE5</div>
       </div>
       <div class="mtype-row">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:.7rem;color:#19e6d4;letter-spacing:.18em;text-transform:uppercase">SECTION EYEBROW LABEL</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:.7rem;color:#8B5CF6;letter-spacing:.18em;text-transform:uppercase">SECTION EYEBROW LABEL</div>
         <div class="mtype-meta">Eyebrow — .72rem, weight 500, ALL CAPS, teal, letter-spacing .2em</div>
       </div>
     </div>
@@ -1277,7 +1881,7 @@ const POPUPS = {
         <div class="mbd o">Outline</div>
         <div class="mbd pi">Pill CTA</div>
       </div>
-      <p style="font-size:.79rem;color:var(--muted);margin-top:8px">Primary = teal bg, dark text. Outline = transparent with border. Cards glow on hover with <code style="background:var(--bg-sec);color:var(--teal);padding:1px 5px;border-radius:4px;font-size:.75rem">box-shadow: 0 0 40px rgba(25,230,212,.25)</code></p>
+      <p style="font-size:.79rem;color:var(--muted);margin-top:8px">Primary = teal bg, dark text. Outline = transparent with border. Cards glow on hover with <code style="background:var(--bg-sec);color:var(--teal);padding:1px 5px;border-radius:4px;font-size:.75rem">box-shadow: 0 0 40px rgba(139,92,246,.25)</code></p>
     </div>
     <div class="mdoc-sec">
       <div class="mdoc-h">Layout principles</div>
@@ -1334,6 +1938,189 @@ const POPUPS = {
       <div class="mprompt">Use /[your-design-skill] to restyle my portfolio. Apply the full system — colors, typography, layout, particles, animations. Keep all content.</div>
       <div class="mprompt">Here is my resume and Lovable site URL. Read both and update my portfolio with real content — skills with percentages, certifications, experience timeline, featured projects.</div>
       <div class="mprompt">Build out the "[Project Name]" card. How I Built This: [step-by-step]. Documentation: [what to show]. Keep all other cards as Coming Soon with empty popups.</div>
+    </div>`,
+
+  'Voice Guide Skill|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Pulled my 40 most recent sent emails</h4>
+        <p>Connected Gmail to Claude via the Gmail MCP connector. Fetched the 40 most recent sent emails — the sent folder is a gold mine because it captures how I actually write when I'm not trying to write well, across real contexts: professional, casual, urgent, reflective.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Used Claude to analyse tone, registers, sentence patterns, and rhetorical moves</h4>
+        <p>Fed all 40 emails into a single Claude prompt asking it to identify recurring patterns: how sentences are opened, where emphasis lands, how formality shifts by context, how I signal urgency vs. warmth vs. directness. Claude read across all 40 at once and returned a structured analysis — not summaries, but underlying patterns.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Generated a structured 8-section voice guide</h4>
+        <p>Claude took the pattern analysis and compiled it into an 8-section voice profile: Core Identity, Registers, Sentence Patterns, Rhetorical Moves, Emotional Register, Do's and Don'ts, Quick Reference, and Calibration Tests. Each section is written as a directive — instructions Claude (or any AI) can follow to write as me.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Saved it as a <code>humanize-writing</code> skill</h4>
+        <p>Packaged the entire voice guide as a Claude Cowork skill using <code>/skill-creator</code>. Now any task — emails, LinkedIn posts, reports, proposals — can be run through <code>/humanize-writing</code> and the output comes out sounding like me, not like a bot.</p>
+      </div></div>
+    </div>`,
+
+  'Voice Guide Skill|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">The 8 sections of the voice guide</div>
+      <ul class="mlist">
+        <li><strong style="color:var(--text)">Core Identity</strong> — The overall persona: who I am when I write, the values that show through, and the primary impression I want to leave.</li>
+        <li><strong style="color:var(--text)">Registers</strong> — How my tone shifts across contexts: professional emails vs. quick messages vs. formal proposals. Which elements stay constant and which flex.</li>
+        <li><strong style="color:var(--text)">Sentence Patterns</strong> — How I construct sentences: average length, how I open, where I put emphasis, whether I front-load or build to a point.</li>
+        <li><strong style="color:var(--text)">Rhetorical Moves</strong> — Recurring structural patterns: how I frame a request, how I soften a critique, how I close with action or warmth.</li>
+        <li><strong style="color:var(--text)">Emotional Register</strong> — How emotion shows up in my writing — not melodrama, but where warmth, energy, or gravity comes through and how.</li>
+        <li><strong style="color:var(--text)">Do's and Don'ts</strong> — A direct list: phrases I use, phrases I avoid, structural habits to keep, AI patterns to strip out.</li>
+        <li><strong style="color:var(--text)">Quick Reference</strong> — A one-glance summary of the voice so Claude can calibrate fast without re-reading the whole profile.</li>
+        <li><strong style="color:var(--text)">Calibration Tests</strong> — Three short passages: one written in my voice, one written "generically," one that overcorrects. Used to test whether an output is on-brand.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build your own — copyable prompt</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Run this in Claude Cowork after connecting your Gmail. Swap the number for however many emails you want to analyse.</p>
+      <div class="mprompt">Connect to my Gmail and fetch my 40 most recent sent emails. Read all of them, then analyse: (1) my sentence structure and average length, (2) how my tone shifts by context, (3) my recurring rhetorical moves, (4) what I always do and never do. Then compile everything into an 8-section voice guide I can save as a Claude skill: Core Identity, Registers, Sentence Patterns, Rhetorical Moves, Emotional Register, Do's and Don'ts, Quick Reference, Calibration Tests. Write each section as a directive Claude can follow to write as me.</div>
+    </div>`,
+
+  'Email Manager Scheduled Task|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Connected Gmail to Claude</h4>
+        <p>Installed the Gmail MCP connector in Claude Cowork. This gives Claude direct read access to my inbox — it can search threads, read messages, identify senders, and understand context without me forwarding anything manually.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Built an email-manager skill that filters noise and prioritises what matters</h4>
+        <p>Created a <code>/email-manager</code> skill with clear triage rules: skip newsletters, notifications, and CC'd-for-awareness threads. Elevate anything requiring a decision, a reply, or a deadline. Sort the rest by urgency. The skill outputs a clean ranked list — not a wall of summaries.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Wired it to my voice guide so drafts sound like me</h4>
+        <p>The email-manager skill calls <code>/humanize-writing</code> for every draft it generates. So the reply to a client inquiry, a follow-up to a collaborator, a polite decline — all come out in my actual voice, not generic AI prose. I edit, not rewrite.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Wrapped it in a scheduled task that runs every morning</h4>
+        <p>Used Claude Cowork's scheduled task feature to run the full triage + draft pipeline every morning at 7am. I wake up to a ranked inbox digest with draft replies ready to review. It takes about 3 minutes to process what used to take 40.</p>
+      </div></div>
+    </div>`,
+
+  'Email Manager Scheduled Task|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Skill instructions — email-manager</div>
+      <ul class="mlist">
+        <li>Connect to Gmail and fetch all unread messages from the last 24 hours.</li>
+        <li>Filter out: newsletters, automated notifications, CC-only threads, calendar invites, promotional emails.</li>
+        <li>For each remaining email: identify sender, thread context, what action is needed, and urgency level (High / Normal / Low).</li>
+        <li>Output a ranked list — High urgency first. For each: one-line summary, what's needed, and a draft reply written in Samuel's voice using <code>/humanize-writing</code>.</li>
+        <li>Never send anything. Present drafts for review only.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Scheduled task setup</div>
+      <ul class="mlist">
+        <li>Trigger: every weekday at 7:00am (WAT — West Africa Time).</li>
+        <li>Task prompt: "Run /email-manager. Triage my inbox from the last 24 hours, filter noise, rank by urgency, and draft replies in my voice for anything that needs a response."</li>
+        <li>Delivery: results appear in Claude Cowork session ready to review, edit, and send.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build your own — copyable prompt</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Use this in Claude Cowork with Gmail connected to set up your own morning triage.</p>
+      <div class="mprompt">Connect to my Gmail. Fetch all unread emails from the last 24 hours. Filter out newsletters, notifications, and anything I was only CC'd on. For each email that needs my attention: summarise in one line, tell me what action is needed, and draft a reply in my voice. Rank by urgency: High (deadline or decision needed today), Normal (reply needed this week), Low (FYI or no rush). Never send anything — show me drafts only.</div>
+    </div>`,
+
+  'WhatsApp AI Bot|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Exported 5 real WhatsApp chats and parsed them</h4>
+        <p>Exported 5 real WhatsApp conversations as <code>.txt</code> files — 2,097 messages written by me across different contexts: casual, professional, spiritual, hype. Built a parser (<code>parse-chats.js</code>) that handles both 24-hour and 12-hour time formats and extracts only my messages, stripping out media notices and system messages.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Fed messages to Groq AI to generate a <code>persona.txt</code></h4>
+        <p>Sent a sample of 200 of my messages to Groq's Llama 3.3 70B model via <code>generate-persona.js</code>. The prompt instructed it to extract my tone, slang, emoji use, sentence structure, greeting style, and response patterns — then write a persona prompt starting with "You are Samuel King…". Output saved as <code>persona.txt</code>: the bot's personality file.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Built a Node.js bot with <code>whatsapp-web.js</code></h4>
+        <p>Built <code>index.js</code> — the main bot. It connects to WhatsApp via QR scan (same as WhatsApp Web), listens for incoming messages, loads <code>persona.txt</code> as the system prompt, adds the last 10 messages as conversation context, and sends the full package to Groq for a reply.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Baked in anti-AI-tell rules</h4>
+        <p>Added a hard list of banned words and phrases (words like "certainly", "I'd be happy to", "as an AI") and wired in humanize-writing principles. The bot waits 3–8 seconds before replying to feel human. Sensitive messages — money, emergencies, scheduling — get flagged with <strong>⚠️ HUMAN REVIEW NEEDED</strong> in the activity log instead of auto-replied.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">5</div><div class="ms-body">
+        <h4>Deployed to Railway via GitHub — runs 24/7</h4>
+        <p>Pushed the project to a private GitHub repo and connected it to Railway's free tier. The bot now runs continuously on a cloud server — no laptop needed. Checked via <code>bot.log</code> daily for flagged messages that need a human response.</p>
+      </div></div>
+    </div>`,
+
+  'WhatsApp AI Bot|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">How it works</div>
+      <ul class="mlist">
+        <li>The bot connects to WhatsApp via QR scan — exactly like WhatsApp Web. Scan once, stays connected.</li>
+        <li>When a message arrives, it loads <code>persona.txt</code> as the AI's system prompt and adds the last 10 messages as conversation context.</li>
+        <li>The full package is sent to <strong style="color:var(--text)">Groq's Llama 3.3 70B model</strong> (free API tier) and a reply is generated in Samuel's voice.</li>
+        <li>The bot waits 3–8 seconds before sending — paced like a human typing a response.</li>
+        <li>Sensitive messages (money, emergencies, scheduling) are never auto-replied — they are flagged with ⚠️ in the log for manual handling.</li>
+      </ul>
+      <div style="margin-top:14px;padding:12px 16px;background:var(--bg-sec);border-radius:8px;border:1px solid var(--border);font-size:.78rem;color:var(--muted);line-height:1.7">
+        <strong style="color:var(--teal)">Stack:</strong> Node.js &nbsp;·&nbsp; whatsapp-web.js &nbsp;·&nbsp; Groq API (free) &nbsp;·&nbsp; Railway &nbsp;·&nbsp; GitHub
+      </div>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Project files</div>
+      <ul class="mlist">
+        <li><code>index.js</code> — Main bot: listens for messages, calls Groq, sends replies, flags sensitive content.</li>
+        <li><code>parse-chats.js</code> — Extracts your messages from WhatsApp <code>.txt</code> exports. Handles both time formats.</li>
+        <li><code>generate-persona.js</code> — Sends 200 of your messages to Groq and writes the output to <code>persona.txt</code>.</li>
+        <li><code>persona.txt</code> — The bot's personality. Edit this file directly to improve or correct how it replies.</li>
+        <li><code>bot.log</code> — Activity log. Check this daily — flagged messages appear here for human review.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build it yourself — copyable prompt</div>
+      <div class="mprompt">I want to build a WhatsApp bot that replies to messages in my voice. I'll export my WhatsApp chats as .txt files. Help me: 1) Parse the exports to extract only my messages, 2) Generate a persona.txt from my writing style using Groq AI, 3) Build a Node.js bot using whatsapp-web.js that loads the persona and auto-replies, 4) Deploy it to Railway via GitHub so it runs 24/7.</div>
+    </div>`,
+
+  'AI Persona Builder Skill|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Exported 5 real WhatsApp chats — 2,097 messages</h4>
+        <p>Exported 5 WhatsApp conversations spanning different contexts: daily life, work coordination, church, friends, hype threads. The variety matters — it captures the full range of how I write, not just one register.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Wrote a parser that handles both WhatsApp time formats</h4>
+        <p>WhatsApp exports can use either 24-hour (<code>13:45</code>) or 12-hour (<code>1:45 PM</code>) formats depending on the phone's region settings. Built a parser that detects both and extracts only the target person's messages — filtering out "Media omitted", system messages, and other participants.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Built an analysis prompt that extracts 10 dimensions of voice</h4>
+        <p>The Groq prompt instructs the model to extract: tone & energy, vocabulary & slang (quoted from real messages), sentence structure, punctuation style, emoji patterns, response habits, greeting/closing style, topics & interests, what to avoid, and 10 example phrases across different situations. The output is a structured <code>persona.txt</code> starting with "You are [name]…"</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Appended anti-AI-tell rules to every generated persona</h4>
+        <p>After the style extraction, the skill appends a fixed block of operational rules: banned words list, humanize-writing principles, instructions for sensitive topics, and reminders not to over-explain or use formal AI phrasing. These rules are baked in — they cannot be accidentally overwritten by the persona content.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">5</div><div class="ms-body">
+        <h4>Packaged as a reusable <code>.skill</code> file</h4>
+        <p>The entire workflow — parse → sample → analyse → append rules → write output — is packaged as a Claude Cowork skill using <code>/skill-creator</code>. Any future project (new bot, new persona, new person's voice) can now run <code>/ai-persona-builder</code> and get a complete persona file in minutes without rebuilding the pipeline from scratch.</p>
+      </div></div>
+    </div>`,
+
+  'AI Persona Builder Skill|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">What the skill extracts</div>
+      <ul class="mlist">
+        <li><strong style="color:var(--text)">Tone & energy</strong> — warm / direct / spiritual / hype — and how it shifts across contexts.</li>
+        <li><strong style="color:var(--text)">Vocabulary & slang</strong> — quoted directly from real messages, not inferred.</li>
+        <li><strong style="color:var(--text)">Sentence structure</strong> — short and punchy vs. long and flowing, and when each pattern appears.</li>
+        <li><strong style="color:var(--text)">Punctuation style</strong> — caps usage, ellipses, full stops, question marks — the micro-habits that signal a specific person.</li>
+        <li><strong style="color:var(--text)">Emoji use</strong> — which emojis, how often, and in exactly what emotional context.</li>
+        <li><strong style="color:var(--text)">Response patterns</strong> — how the person agrees, disagrees, asks questions, and reacts.</li>
+        <li><strong style="color:var(--text)">Greeting & closing style</strong> — how they open a conversation and how they sign off.</li>
+        <li><strong style="color:var(--text)">Topics & interests</strong> — recurring themes that reveal what matters to them.</li>
+        <li><strong style="color:var(--text)">What to avoid</strong> — specific phrases or patterns that would break character.</li>
+        <li><strong style="color:var(--text)">10 example phrases</strong> — across different situations: greeting, agreeing, pushing back, hyping up, winding down.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build it yourself — copyable prompt</div>
+      <div class="mprompt">I want to extract my writing style from my WhatsApp chats and turn it into a persona prompt an AI can use to reply as me. I have exported .txt chat files. Help me: 1) Parse the exports to extract only my messages, 2) Analyze a sample of 200 messages to extract my tone, vocabulary, slang, sentence patterns, emoji use, and response habits, 3) Write a detailed persona.txt prompt starting with "You are [my name]...", 4) Append anti-AI rules so replies never sound robotic. Save the result to persona.txt.</div>
     </div>`
 };
 
@@ -1343,15 +2130,17 @@ const POPUPS = {
 const PROJECTS = [
   {t:'Design System Skill', d:'A reusable Claude skill that extracts and applies a full design system — colours, typography, layout — to any build.', built:true},
   {t:'Portfolio Website', d:'This very site — scaffolded, styled with two design systems, and populated from real resume + Lovable data through Claude Cowork.', built:true},
-  {t:'Voice Guide Skill', d:'A skill that produces audio-ready voice guides from written content.'},
-  {t:'Email Manager Scheduled Task', d:'An automated scheduled task that triages, summarises, and prioritises your inbox.'},
+  {t:'Voice Guide Skill', d:'A psychological profile of how I write, turned into an AI skill any tool can use.', built:true},
+  {t:'Email Manager Scheduled Task', d:'A scheduled task that triages my inbox every morning and drafts replies in my voice.', built:true},
+  {t:'WhatsApp AI Bot', d:'A bot that reads my WhatsApp, learns how I write from my own chats, and replies as me — running 24/7 on a free server.', built:true},
+  {t:'AI Persona Builder Skill', d:'A reusable skill that extracts how anyone writes and turns it into a persona prompt any AI can use.', built:true},
   {t:'Research Presentation', d:'A pipeline that turns raw research notes into polished slide decks automatically.'},
   {t:'Spreadsheet Analysis', d:'An AI-powered Excel skill that extracts insights and charts from tabular data.'},
   {t:'Data Dashboard', d:'A live artifact dashboard that pulls and visualises data from connected sources.'},
   {t:'File Organisation Process', d:'An automated workflow that categorises and renames files using semantic understanding.'},
   {t:'Custom Workflow', d:'A bespoke multi-step automation built around a specific organisational need.'},
 ];
-const PLACEHOLDERS = [{},{},{}];
+const PLACEHOLDERS = [{}];
 
 function renderProjects(){
   const g = document.getElementById('projGrid');
@@ -1360,7 +2149,7 @@ function renderProjects(){
     const d = document.createElement('div');
     if(Object.keys(p).length===0){
       d.className='pcard ph';
-      d.innerHTML=`<div style="font-size:1.3rem;color:rgba(25,230,212,.12);margin-bottom:6px">+</div>
+      d.innerHTML=`<div style="font-size:1.3rem;color:rgba(139,92,246,.12);margin-bottom:6px">+</div>
         <div style="font-size:.78rem;color:rgba(255,255,255,.12);font-style:italic">Future project</div>`;
     } else {
       d.className='pcard'+(p.built?' built':' coming');
@@ -1516,10 +2305,10 @@ const VIDS_SHORTS = [
   { id:'yaXDYcQ9pGE', tag:'Short' }
 ];
 
-function makeVCard(v, isShort){
-  const cls = isShort ? 'vcard port' : 'vcard land';
-  const url = `https://www.youtube.com/watch?v=${v.id}`;
-  const thumb = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
+function makeVCard(v,isShort){
+  const cls=isShort?'vcard port':'vcard land';
+  const url=`https://www.youtube.com/watch?v=${v.id}`;
+  const thumb=`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
   return `<a class="${cls}" href="${url}" target="_blank" rel="noopener">
     <img class="vthumb" src="${thumb}" alt="Video thumbnail" loading="lazy"/>
     <div class="voverlay"></div>
@@ -1529,9 +2318,9 @@ function makeVCard(v, isShort){
 }
 
 function renderVideos(){
-  const wrap = document.getElementById('videoRows');
+  const wrap=document.getElementById('videoRows');
   if(!wrap) return;
-  wrap.innerHTML = `
+  wrap.innerHTML=`
     <p class="vid-row-label rv">Featured videos</p>
     <div class="vid-row-wrap rv">
       <div class="vid-scroll">${VIDS_FEATURED.map(v=>makeVCard(v,false)).join('')}</div>
@@ -1540,31 +2329,30 @@ function renderVideos(){
     <div class="vid-row-wrap rv">
       <div class="vid-scroll">${VIDS_SHORTS.map(v=>makeVCard(v,true)).join('')}</div>
     </div>`;
-  const obs2=new IntersectionObserver(entries=>{
+  const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
   },{threshold:.1});
-  wrap.querySelectorAll('.rv').forEach(el=>obs2.observe(el));
+  wrap.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 }
 renderVideos();
 
 /* ============================================================
    MODAL SYSTEM
 ============================================================ */
-const backdrop = document.getElementById('modalBg');
-const mLabel   = document.getElementById('mLabel');
-const mTitle   = document.getElementById('mTitle');
-const mBody    = document.getElementById('mBody');
-const mClose   = document.getElementById('mClose');
-const mBox     = document.getElementById('mbox');
-
-const TYPE_LABELS = { how:'How I built this', docs:'Documentation' };
+const backdrop=document.getElementById('modalBg');
+const mLabel=document.getElementById('mLabel');
+const mTitle=document.getElementById('mTitle');
+const mBody=document.getElementById('mBody');
+const mClose=document.getElementById('mClose');
+const mBox=document.getElementById('mbox');
+const TYPE_LABELS={how:'How I built this',docs:'Documentation'};
 
 function openModal(key){
-  const [title, type] = key.split('|||');
-  mLabel.textContent = TYPE_LABELS[type] || type;
-  mTitle.textContent = title;
-  const html = POPUPS[key];
-  mBody.innerHTML = html || `<div class="mempty">
+  const [title,type]=key.split('|||');
+  mLabel.textContent=TYPE_LABELS[type]||type;
+  mTitle.textContent=title;
+  const html=POPUPS[key];
+  mBody.innerHTML=html||`<div class="mempty">
     <div class="mempty-i">📋</div>
     <p>Content coming soon — check back after the next build session.</p>
   </div>`;
@@ -1572,24 +2360,22 @@ function openModal(key){
   document.body.style.overflow='hidden';
   mBox.scrollTop=0;
 }
-
 function closeModal(){
   backdrop.classList.remove('open');
   document.body.style.overflow='';
 }
-
 mClose.addEventListener('click',closeModal);
-backdrop.addEventListener('click',e=>{ if(e.target===backdrop) closeModal(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 /* ============================================================
    SCROLL PROGRESS BAR
 ============================================================ */
 (function(){
-  const bar = document.getElementById('progress-bar');
+  const bar=document.getElementById('progress-bar');
   window.addEventListener('scroll',()=>{
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-    bar.style.width = Math.min(pct,100)+'%';
+    const pct=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100;
+    bar.style.width=Math.min(pct,100)+'%';
   },{passive:true});
 })();
 
@@ -1597,28 +2383,21 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
    CUSTOM GLOW CURSOR
 ============================================================ */
 (function(){
-  const glow = document.getElementById('cursorGlow');
-  const dot  = document.getElementById('cursorDot');
+  const glow=document.getElementById('cursorGlow');
+  const dot=document.getElementById('cursorDot');
   if(!glow||!dot) return;
-  let mx=0, my=0;
   document.addEventListener('mousemove',e=>{
-    mx=e.clientX; my=e.clientY;
-    dot.style.left=mx+'px'; dot.style.top=my+'px';
-    glow.style.left=mx+'px'; glow.style.top=my+'px';
+    dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+    glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';
   });
-  document.addEventListener('mouseenter',()=>{ glow.style.opacity='1'; dot.style.opacity='1'; });
-  document.addEventListener('mouseleave',()=>{ glow.style.opacity='0'; dot.style.opacity='0'; });
-  // Scale up glow on interactive elements
-  const hoverEls = 'a,button,.pcard,.feat-card,.tcard,.vcard,.ccard,.stab,.cfbtn';
+  document.addEventListener('mouseenter',()=>{glow.style.opacity='1';dot.style.opacity='1';});
+  document.addEventListener('mouseleave',()=>{glow.style.opacity='0';dot.style.opacity='0';});
+  const hoverEls='a,button,.pcard,.feat-card,.tcard,.vcard,.ccard,.stab,.cfbtn';
   document.addEventListener('mouseover',e=>{
-    if(e.target.closest(hoverEls)){
-      glow.style.width='36px'; glow.style.height='36px';
-    }
+    if(e.target.closest(hoverEls)){glow.style.width='36px';glow.style.height='36px';}
   });
   document.addEventListener('mouseout',e=>{
-    if(e.target.closest(hoverEls)){
-      glow.style.width='24px'; glow.style.height='24px';
-    }
+    if(e.target.closest(hoverEls)){glow.style.width='24px';glow.style.height='24px';}
   });
 })();
 
@@ -1626,80 +2405,61 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
    HERO STAGGERED ENTRANCE + STAT COUNTERS
 ============================================================ */
 (function(){
-  // Stagger hero elements on load
   document.querySelectorAll('.hl').forEach(el=>{
-    const delay = parseInt(el.dataset.delay||0);
-    setTimeout(()=> el.classList.add('in'), delay + 120);
+    const delay=parseInt(el.dataset.delay||0);
+    setTimeout(()=>el.classList.add('in'),delay+120);
   });
-
-  // Animated count-up for stats
   function countUp(el){
-    const target = parseInt(el.dataset.count);
-    const suffix = el.dataset.suffix||'';
-    const isDecimal = el.dataset.decimal==='1';
-    const duration = 1400;
-    const start = performance.now();
+    const target=parseInt(el.dataset.count);
+    const suffix=el.dataset.suffix||'';
+    const isDecimal=el.dataset.decimal==='1';
+    const duration=1400;
+    const start=performance.now();
     function step(now){
-      const progress = Math.min((now-start)/duration, 1);
-      const eased = 1 - Math.pow(1-progress,3);
-      const val = Math.round(target * eased);
-      el.textContent = isDecimal ? (val/10).toFixed(1) + suffix : val + suffix;
-      if(progress < 1) requestAnimationFrame(step);
+      const progress=Math.min((now-start)/duration,1);
+      const eased=1-Math.pow(1-progress,3);
+      const val=Math.round(target*eased);
+      el.textContent=isDecimal?(val/10).toFixed(1)+suffix:val+suffix;
+      if(progress<1)requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-
-  // Fire counters after hero entrance delay
-  setTimeout(()=>{
-    document.querySelectorAll('.hstat-n[data-count]').forEach(countUp);
-  }, 700);
+  setTimeout(()=>{document.querySelectorAll('.hstat-n[data-count]').forEach(countUp);},700);
 })();
 
 /* ============================================================
    TEXT SCRAMBLE ON SECTION HEADINGS
 ============================================================ */
 (function(){
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$';
+  const CHARS='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$';
   function scramble(el){
-    const spans = el.querySelectorAll('.sc-word');
-    if(!spans.length) return;
+    const spans=el.querySelectorAll('.sc-word');
+    if(!spans.length)return;
     spans.forEach(span=>{
-      const original = span.dataset.original;
-      let frame = 0;
-      const total = 18;
+      const original=span.dataset.original;
+      let frame=0;const total=18;
       function tick(){
-        if(frame >= total){ span.textContent = original; return; }
-        span.textContent = original.split('').map((c,i)=>{
-          if(i < Math.floor(original.length * frame/total)) return original[i];
-          return c===' ' ? ' ' : CHARS[Math.floor(Math.random()*CHARS.length)];
+        if(frame>=total){span.textContent=original;return;}
+        span.textContent=original.split('').map((c,i)=>{
+          if(i<Math.floor(original.length*frame/total))return original[i];
+          return c===' '?' ':CHARS[Math.floor(Math.random()*CHARS.length)];
         }).join('');
-        frame++;
-        setTimeout(tick, 38);
+        frame++;setTimeout(tick,38);
       }
       tick();
     });
   }
-
-  // Wrap plain text nodes in h2.sc in scramble spans
   document.querySelectorAll('h2.sc').forEach(h2=>{
     h2.childNodes.forEach(node=>{
-      if(node.nodeType===3 && node.textContent.trim()){
-        const sp = document.createElement('span');
-        sp.className='sc-word';
-        sp.dataset.original = node.textContent;
-        sp.textContent = node.textContent;
-        node.replaceWith(sp);
+      if(node.nodeType===3&&node.textContent.trim()){
+        const sp=document.createElement('span');
+        sp.className='sc-word';sp.dataset.original=node.textContent;
+        sp.textContent=node.textContent;node.replaceWith(sp);
       }
     });
   });
-
-  const scObs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        scramble(e.target);
-        scObs.unobserve(e.target);
-      }
-    });
+  const scObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){scramble(e.target);scObs.unobserve(e.target);}});
   },{threshold:.5});
   document.querySelectorAll('h2.sc').forEach(el=>scObs.observe(el));
 })();
@@ -1708,108 +2468,80 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
    CARD TILT EFFECT
 ============================================================ */
 (function(){
-  const TILT_SELECTORS = '.pcard.built, .feat-card, .edu-card';
   function applyTilt(card){
     card.addEventListener('mousemove',e=>{
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width  - 0.5;
-      const y = (e.clientY - r.top)  / r.height - 0.5;
-      card.style.transform = `perspective(600px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-3px)`;
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(600px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-3px)`;
     });
-    card.addEventListener('mouseleave',()=>{
-      card.style.transform = '';
-    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
   }
-  // Apply to existing cards + re-apply after renders
   function tiltAll(){
-    document.querySelectorAll(TILT_SELECTORS).forEach(applyTilt);
+    document.querySelectorAll('.pcard.built,.feat-card,.edu-card').forEach(applyTilt);
   }
-  tiltAll();
-  // Re-apply after projGrid and skills re-render (small delay)
-  setTimeout(tiltAll, 600);
+  tiltAll();setTimeout(tiltAll,600);
 })();
 
 /* ============================================================
-   CONTACT FORM VALIDATION
+   CONTACT FORM VALIDATION + FORMSPREE
 ============================================================ */
 (function(){
-  const form = document.getElementById('contactForm');
-  if(!form) return;
-
-  function validateEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-
-  function setField(id, valid){
-    const wrap = document.getElementById(id);
-    if(!wrap) return;
-    wrap.classList.toggle('bad', !valid);
-    wrap.classList.toggle('good', valid);
+  const form=document.getElementById('contactForm');
+  if(!form)return;
+  function validateEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+  function setField(id,valid){
+    const wrap=document.getElementById(id);
+    if(!wrap)return;
+    wrap.classList.toggle('bad',!valid);
+    wrap.classList.toggle('good',valid);
   }
-
-  // Live validation on blur
   form.querySelectorAll('input,textarea').forEach(el=>{
     el.addEventListener('blur',()=>{
-      if(el.id==='cf_email') setField('cf-email', validateEmail(el.value.trim()));
-      else setField('cf-'+el.name, el.value.trim().length > 0);
+      if(el.id==='cf_email')setField('cf-email',validateEmail(el.value.trim()));
+      else setField('cf-'+el.name,el.value.trim().length>0);
     });
     el.addEventListener('input',()=>{
-      const wrap = el.closest('.cfield');
-      if(wrap && wrap.classList.contains('bad')){
-        if(el.id==='cf_email') setField('cf-email', validateEmail(el.value.trim()));
-        else setField('cf-'+el.name, el.value.trim().length > 0);
+      const wrap=el.closest('.cfield');
+      if(wrap&&wrap.classList.contains('bad')){
+        if(el.id==='cf_email')setField('cf-email',validateEmail(el.value.trim()));
+        else setField('cf-'+el.name,el.value.trim().length>0);
       }
     });
   });
-
-  form.addEventListener('submit', async e=>{
+  form.addEventListener('submit',async e=>{
     e.preventDefault();
-    const name    = form.cf_name.value.trim();
-    const email   = form.cf_email.value.trim();
-    const subject = form.cf_subject.value.trim();
-    const message = form.cf_message.value.trim();
-
-    let ok = true;
-    if(!name)               { setField('cf-name',false);    ok=false; }
-    if(!validateEmail(email)){ setField('cf-email',false);  ok=false; }
-    if(!subject)            { setField('cf-subject',false); ok=false; }
-    if(!message)            { setField('cf-message',false); ok=false; }
-    if(!ok) return;
-
-    const btn = document.getElementById('cfBtnText');
-    btn.textContent = 'Sending…';
-    form.querySelector('button[type="submit"]').disabled = true;
-
-    // ── Formspree integration ──
-    // To activate: sign up free at formspree.io, create a form, replace YOUR_FORM_ID below.
-    const FORMSPREE_ID = 'mgoqdpdk';
-
-    if(FORMSPREE_ID === 'YOUR_FORM_ID'){
-      // Fallback: open mail client if Formspree not yet configured
-      const mailto = `mailto:king.samueljacob@gmail.com?subject=${encodeURIComponent('[Portfolio] '+subject)}&body=${encodeURIComponent('From: '+name+' <'+email+'>\n\n'+message)}`;
-      window.location.href = mailto;
-      setTimeout(()=>{
-        form.style.display='none';
-        document.getElementById('cfSuccess').style.display='block';
-      }, 800);
-      return;
-    }
-
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+    const name=form.cf_name.value.trim();
+    const email=form.cf_email.value.trim();
+    const subject=form.cf_subject.value.trim();
+    const message=form.cf_message.value.trim();
+    let ok=true;
+    if(!name){setField('cf-name',false);ok=false;}
+    if(!validateEmail(email)){setField('cf-email',false);ok=false;}
+    if(!subject){setField('cf-subject',false);ok=false;}
+    if(!message){setField('cf-message',false);ok=false;}
+    if(!ok)return;
+    const btn=document.getElementById('cfBtnText');
+    btn.textContent='Sending…';
+    form.querySelector('button[type="submit"]').disabled=true;
+    const FORMSPREE_ID='mgoqdpdk';
+    try{
+      const res=await fetch(`https://formspree.io/f/${FORMSPREE_ID}`,{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({ name, email, subject, message })
+        body:JSON.stringify({name,email,subject,message})
       });
       if(res.ok){
         form.style.display='none';
         document.getElementById('cfSuccess').style.display='block';
       } else {
-        btn.textContent = 'Try again →';
-        form.querySelector('button[type="submit"]').disabled = false;
+        btn.textContent='Try again →';
+        form.querySelector('button[type="submit"]').disabled=false;
         alert('Something went wrong. Please email me directly at king.samueljacob@gmail.com');
       }
-    } catch(err){
-      btn.textContent = 'Try again →';
-      form.querySelector('button[type="submit"]').disabled = false;
+    }catch(err){
+      btn.textContent='Try again →';
+      form.querySelector('button[type="submit"]').disabled=false;
       alert('Network error. Please email me directly at king.samueljacob@gmail.com');
     }
   });
@@ -1819,19 +2551,41 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
    HAMBURGER MOBILE MENU
 ============================================================ */
 (function(){
-  const btn = document.getElementById('navHamburger');
-  const mob = document.getElementById('navMobile');
-  if(!btn||!mob) return;
+  const btn=document.getElementById('navHamburger');
+  const mob=document.getElementById('navMobile');
+  if(!btn||!mob)return;
   btn.addEventListener('click',()=>{
     mob.classList.toggle('open');
-    btn.textContent = mob.classList.contains('open') ? '✕' : '☰';
+    btn.textContent=mob.classList.contains('open')?'✕':'☰';
   });
   mob.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click',()=>{
-      mob.classList.remove('open');
-      btn.textContent='☰';
-    });
+    a.addEventListener('click',()=>{mob.classList.remove('open');btn.textContent='☰';});
   });
+})();
+
+/* ============================================================
+   DOT NAVIGATION
+============================================================ */
+(function(){
+  const sections=['home','about','skills','projects','featured','videos','experience','certifications','contact'];
+  const dots=document.getElementById('dotNav');
+  if(!dots)return;
+  dots.innerHTML=sections.map((s,i)=>`
+    <a href="#${s}" class="dot-item" data-s="${s}" title="${s.charAt(0).toUpperCase()+s.slice(1)}">
+      <span class="dot-pip"></span>
+    </a>`).join('');
+  function updateDots(){
+    const y=window.scrollY+window.innerHeight/2;
+    sections.forEach(s=>{
+      const el=document.getElementById(s);
+      const dot=dots.querySelector(`[data-s="${s}"]`);
+      if(!el||!dot)return;
+      const active=el.offsetTop<=y&&el.offsetTop+el.offsetHeight>y;
+      dot.classList.toggle('active',active);
+    });
+  }
+  window.addEventListener('scroll',updateDots,{passive:true});
+  updateDots();
 })();
 
 </script>
