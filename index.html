@@ -2121,6 +2121,207 @@ const POPUPS = {
     <div class="mdoc-sec">
       <div class="mdoc-h">Build it yourself — copyable prompt</div>
       <div class="mprompt">I want to extract my writing style from my WhatsApp chats and turn it into a persona prompt an AI can use to reply as me. I have exported .txt chat files. Help me: 1) Parse the exports to extract only my messages, 2) Analyze a sample of 200 messages to extract my tone, vocabulary, slang, sentence patterns, emoji use, and response habits, 3) Write a detailed persona.txt prompt starting with "You are [my name]...", 4) Append anti-AI rules so replies never sound robotic. Save the result to persona.txt.</div>
+    </div>`,
+
+  'File Organisation Process|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Asked AI to audit my existing file structure</h4>
+        <p>Walked Claude through my actual folder setup — Downloads, Desktop clutter, project folders, and the general chaos. Claude mapped out what was there and identified the core problem: files were organised by <em>when</em> I saved them, not by <em>how I actually retrieve them</em>.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Defined 3 organising principles to optimise for</h4>
+        <p>Instead of just asking "how should I organise my files?", I gave Claude three constraints to optimise around: (1) <strong>Retrievability</strong> — can I find anything in under 10 seconds? (2) <strong>Project-centricity</strong> — everything related to one project lives in one place. (3) <strong>Minimal maintenance</strong> — the system should be easy to keep up without thinking about it.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Landed on a clean 5-folder tree</h4>
+        <p>Claude designed a folder architecture around those principles. The final structure:</p>
+        <div style="background:var(--bg-sec);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-top:10px;font-family:monospace;font-size:.78rem;color:var(--text);line-height:2">
+          📁 <strong style="color:var(--teal)">01 — Active Projects</strong><br>
+          &nbsp;&nbsp;&nbsp;└── One folder per live project<br>
+          📁 <strong style="color:var(--teal)">02 — Reference</strong><br>
+          &nbsp;&nbsp;&nbsp;└── Templates, guides, frameworks<br>
+          📁 <strong style="color:var(--teal)">03 — Archive</strong><br>
+          &nbsp;&nbsp;&nbsp;└── Completed work, organised by year<br>
+          📁 <strong style="color:var(--teal)">04 — Resources</strong><br>
+          &nbsp;&nbsp;&nbsp;└── Assets, media, reusable components<br>
+          📁 <strong style="color:var(--teal)">05 — Inbox</strong><br>
+          &nbsp;&nbsp;&nbsp;└── Unsorted drops — reviewed weekly
+        </div>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Built a weekly 10-minute review habit around the Inbox folder</h4>
+        <p>The Inbox folder is where everything lands by default. Once a week I open it, move files to their correct location, and delete anything that doesn't need keeping. It takes about 10 minutes. The rest of the system stays clean automatically.</p>
+      </div></div>
+    </div>`,
+
+  'File Organisation Process|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Before → after</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px">
+        <div style="background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.15);border-radius:8px;padding:14px;font-size:.78rem;color:var(--muted);line-height:1.9;font-family:monospace">
+          <div style="color:#f87171;font-weight:600;margin-bottom:8px;font-family:var(--font)">❌ Before</div>
+          📂 Downloads/<br>
+          📂 Desktop/<br>
+          📂 New Folder (2)/<br>
+          📂 Sam stuff/<br>
+          📂 FINAL final v3/<br>
+          📂 Misc/
+        </div>
+        <div style="background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:8px;padding:14px;font-size:.78rem;color:var(--muted);line-height:1.9;font-family:monospace">
+          <div style="color:var(--teal);font-weight:600;margin-bottom:8px;font-family:var(--font)">✅ After</div>
+          📁 01 — Active Projects/<br>
+          📁 02 — Reference/<br>
+          📁 03 — Archive/<br>
+          📁 04 — Resources/<br>
+          📁 05 — Inbox/
+        </div>
+      </div>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build your own — copyable prompt</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Use this in Claude to audit and redesign your own folder structure.</p>
+      <div class="mprompt">I want to redesign how I organise my files. Here's what my current folder structure looks like: [describe or paste your folder tree]. My 3 priorities are: (1) I should be able to find any file in under 10 seconds, (2) everything for one project should live in one place, (3) the system should require minimal maintenance to keep clean. Based on these constraints, design a folder architecture that fits how I actually work. Give me the full folder tree, naming conventions, and a weekly maintenance habit that keeps it clean.</div>
+    </div>`,
+
+  'AI Context File|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Noticed I was re-explaining myself in every chat</h4>
+        <p>Every new Claude session, I'd spend the first few messages reintroducing myself — what I do, my style preferences, what I hate, what I want. It was working fine but wasting time and leaving something out each time. The fix was obvious: write it once, load it automatically.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">2</div><div class="ms-body">
+        <h4>Structured it around 6 sections</h4>
+        <p>Claude helped me identify the minimum information needed for it to be genuinely useful — not just a bio dump. The six sections I landed on:</p>
+        <div style="background:var(--bg-sec);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="font-size:.78rem"><span style="color:var(--teal);font-weight:600">About Me</span><br><span style="color:var(--muted)">Who I am, my background</span></div>
+          <div style="font-size:.78rem"><span style="color:var(--teal);font-weight:600">Goals</span><br><span style="color:var(--muted)">What I'm working toward</span></div>
+          <div style="font-size:.78rem"><span style="color:var(--purple);font-weight:600">How I Like AI to Respond</span><br><span style="color:var(--muted)">Tone, length, format</span></div>
+          <div style="font-size:.78rem"><span style="color:var(--purple);font-weight:600">Rules</span><br><span style="color:var(--muted)">What to never do</span></div>
+          <div style="font-size:.78rem"><span style="color:var(--gold);font-weight:600">Tools</span><br><span style="color:var(--muted)">My stack and how I use it</span></div>
+          <div style="font-size:.78rem"><span style="color:var(--gold);font-weight:600">Key Files</span><br><span style="color:var(--muted)">Paths to important docs</span></div>
+        </div>
+      </div></div>
+      <div class="ms"><div class="ms-num">3</div><div class="ms-body">
+        <h4>Filled it out with Claude's help — it interviewed me</h4>
+        <p>Instead of staring at a blank file, I asked Claude to interview me section by section. It asked targeted questions, I answered naturally, and Claude drafted the context file from my responses. The whole thing took about 20 minutes.</p>
+      </div></div>
+      <div class="ms"><div class="ms-num">4</div><div class="ms-body">
+        <h4>Saved it to my Cowork folder — now it loads automatically</h4>
+        <p>Saved the file to my Claude Projects folder so it's available in every Cowork session. Claude reads it at the start of each conversation — no re-explaining, no recalibrating. Every session starts with full context.</p>
+      </div></div>
+    </div>`,
+
+  'AI Context File|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">What each section covers — and why it matters</div>
+      <ul class="mlist">
+        <li><strong style="color:var(--text)">About Me</strong> — Your role, background, location, and what kind of work you do. Prevents Claude from making wrong assumptions about your context, industry, or expertise level.</li>
+        <li><strong style="color:var(--text)">Goals</strong> — What you're actually working toward right now — not career goals, but current projects and objectives. Helps Claude make suggestions that are relevant to where you're going, not just where you've been.</li>
+        <li><strong style="color:var(--text)">How I Like AI to Respond</strong> — Tone, response length, formatting preferences, and whether you want explanations or just results. The single most impactful section — calibrates every output automatically.</li>
+        <li><strong style="color:var(--text)">Rules</strong> — Non-negotiables. Things Claude should never do. Phrases it should avoid. Approaches that don't work for you. This is where friction gets removed permanently.</li>
+        <li><strong style="color:var(--text)">Tools</strong> — Your current stack: software you use, connectors you have, how your workflow is structured. Helps Claude give tool-specific advice instead of generic suggestions.</li>
+        <li><strong style="color:var(--text)">Key Files</strong> — Paths or references to important files Claude should know about — context files, portfolios, templates, data sources. So you never have to re-attach or re-explain where things live.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Starter template — fill in your own</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:10px">Copy this into a file, fill it in, and save it to your Claude Projects folder.</p>
+      <div class="mprompt"># My AI Context File
+
+## About Me
+Name: [Your name]
+Role: [What you do]
+Location: [Where you're based]
+Background: [2–3 sentences on your experience and expertise]
+
+## Goals
+Current focus: [What you're actively working on right now]
+This month: [Specific things you're trying to complete or learn]
+
+## How I Like AI to Respond
+Tone: [e.g. direct, conversational, concise]
+Response length: [e.g. short by default unless I ask for depth]
+Format: [e.g. avoid bullet points unless I ask, prefer prose]
+What I want more of: [e.g. pushback, alternatives, honest assessment]
+
+## Rules
+Never: [List things AI should never do or say]
+Avoid: [Phrases, formats, or approaches that don't work for you]
+
+## Tools
+Primary AI: [e.g. Claude via Cowork]
+Stack: [List the main tools you use]
+Connectors: [Which MCP connectors you have active]
+
+## Key Files
+[File name]: [Path or description]
+[File name]: [Path or description]</div>
+    </div>`,
+
+  'Skills Library|||how':`
+    <div class="ms-list">
+      <div class="ms"><div class="ms-num">1</div><div class="ms-body">
+        <h4>Built a growing library of reusable skills</h4>
+        <p>Each skill in the library is a packaged set of instructions that loads automatically when triggered — either by name (<code>/skill-name</code>) or when Claude detects the right context. Here's every skill currently in the library:</p>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          ${[
+            ['sams-design-design','Applies my personal dark design system to any visual output'],
+            ['lovable-inspiration-design','Futuristic dark/neon visual language for UI builds'],
+            ['dark-website-design-idea','Dark theme with violet accent — precision and authority'],
+            ['dark-website-ideas-2','Futuristic chromatic design with rainbow gradients'],
+            ['microsoft-inspired-design','Clean enterprise Fluent Design — white with blue accents'],
+            ['humanize-writing','Strips AI tells and rewrites in my actual voice'],
+            ['email-manager','Triages inbox, filters noise, drafts replies in my voice'],
+            ['linkedin-post','Converts builds and wins into LinkedIn posts in my style'],
+            ['client-outreach','Drafts cold emails and applications in my voice'],
+            ['portfolio-update','Updates and manages this portfolio website'],
+            ['ai-persona-builder','Extracts anyone\'s writing style into a reusable persona'],
+            ['bot-persona-trainer','Improves and maintains an AI bot persona over time'],
+            ['whatsapp-bot-builder','Full pipeline to build a WhatsApp AI bot'],
+            ['railway-deployer','Deploys Node.js apps to Railway for free 24/7 hosting'],
+            ['pptx','Creates and edits PowerPoint presentations'],
+            ['docx','Creates and edits Word documents'],
+            ['xlsx','Creates and edits Excel spreadsheets'],
+            ['pdf','Processes, creates, and extracts from PDF files'],
+            ['schedule','Sets up scheduled tasks and automation triggers'],
+            ['skill-creator','Creates new skills and improves existing ones'],
+            ['session-prep','Generates full teaching session packages'],
+            ['ai-bootcamp-example-model','Full coaching guide for the AI Builder Program'],
+          ].map(([name,desc])=>`
+          <div style="display:flex;gap:10px;align-items:flex-start;padding:7px 10px;background:var(--bg-sec);border-radius:6px;border:1px solid var(--border)">
+            <code style="font-size:.7rem;color:var(--teal);white-space:nowrap;flex-shrink:0;padding-top:1px">/${name}</code>
+            <span style="font-size:.76rem;color:var(--muted)">${desc}</span>
+          </div>`).join('')}
+        </div>
+      </div></div>
+    </div>`,
+
+  'Skills Library|||docs':`
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Skills I built from scratch</div>
+      <ul class="mlist">
+        <li><strong style="color:var(--text)">/sams-design-design</strong> — Extracted my personal design system from lashbrookdesigns.com using Claude in Chrome, then packaged it as a skill so it applies automatically to every build.</li>
+        <li><strong style="color:var(--text)">/humanize-writing</strong> — Built from analysis of 40 of my sent emails. Claude identified my patterns and compiled them into a voice guide I can trigger on any output.</li>
+        <li><strong style="color:var(--text)">/email-manager</strong> — Custom triage logic: skip noise, surface decisions, draft replies in my voice. Wired to a scheduled task that runs every morning.</li>
+        <li><strong style="color:var(--text)">/portfolio-update</strong> — A skill that knows the structure and content of this site so it can update cards, popups, and stats without me re-explaining the page each time.</li>
+        <li><strong style="color:var(--text)">/ai-bootcamp-example-model</strong> — Full session-by-session coaching guide for the AI Builder Program I run. Packaged as a skill so it's always available mid-session.</li>
+        <li><strong style="color:var(--text)">/session-prep</strong> — Generates complete teaching packages for any cohort session: handout, walkthrough, facilitator notes, exercises.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Skills installed from the marketplace</div>
+      <ul class="mlist">
+        <li><strong style="color:var(--text)">/lovable-inspiration-design</strong> — Installed via the Claude Skills marketplace. Defines the futuristic dark/neon visual language used on this site.</li>
+        <li><strong style="color:var(--text)">/pptx, /docx, /xlsx, /pdf</strong> — Document creation and editing skills from the marketplace. Handle file generation so I don't need to think about the mechanics.</li>
+        <li><strong style="color:var(--text)">/railway-deployer</strong> — Marketplace skill that guides deployment of any Node.js app to Railway. Used it to get the WhatsApp bot live in one session.</li>
+        <li><strong style="color:var(--text)">/skill-creator</strong> — Meta-skill from the marketplace. Used to package every skill I build from scratch — handles the SKILL.md format and description.</li>
+        <li><strong style="color:var(--text)">/schedule</strong> — Marketplace skill for setting up scheduled tasks. Powers the daily email triage automation.</li>
+      </ul>
+    </div>
+    <div class="mdoc-sec">
+      <div class="mdoc-h">Build your own skills library — copyable prompt</div>
+      <div class="mprompt">Based on the work I do — [describe your role and main tasks in 2–3 sentences] — what skills do you think I should create? For each suggestion, give me: the skill name, what it would do, what inputs it needs, and what a good trigger description would look like. Prioritise skills that would save me the most time on tasks I do repeatedly.</div>
     </div>`
 };
 
@@ -2137,7 +2338,9 @@ const PROJECTS = [
   {t:'Research Presentation', d:'A pipeline that turns raw research notes into polished slide decks automatically.'},
   {t:'Spreadsheet Analysis', d:'An AI-powered Excel skill that extracts insights and charts from tabular data.'},
   {t:'Data Dashboard', d:'A live artifact dashboard that pulls and visualises data from connected sources.'},
-  {t:'File Organisation Process', d:'An automated workflow that categorises and renames files using semantic understanding.'},
+  {t:'File Organisation Process', d:'Used AI to audit my files and design an organisation system that actually fits how I work.', built:true},
+  {t:'AI Context File', d:'A persistent context file that teaches my AI tool who I am, what I do, and how I work — loaded into every chat automatically.', built:true},
+  {t:'Skills Library', d:'A library of the AI skills I built or installed that turn one-off prompts into repeatable workflows.', built:true},
   {t:'Custom Workflow', d:'A bespoke multi-step automation built around a specific organisational need.'},
 ];
 const PLACEHOLDERS = [{}];
