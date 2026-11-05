@@ -234,6 +234,20 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
+
+/* PROJECT MANAGEMENT */
+.pm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pm-card{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:#fff}
+.pm-card .big{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.6rem;line-height:1;letter-spacing:-.02em}
+.pm-card h3{font-size:1rem;font-weight:500;margin:12px 0 8px}
+.pm-card p{font-size:.9rem;color:var(--ink-2)}
+.pm-card .src{display:block;margin-top:14px;font-size:.76rem;color:var(--muted)}
+.pm-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;border-top:1px solid var(--line);padding-top:40px}
+.pm-meta h4{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.pm-meta li{list-style:none;font-size:.93rem;padding:7px 0;border-bottom:1px solid #F1EEE8;color:var(--ink-2)}
+@media(max-width:980px){.pm-grid,.pm-meta{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.pm-grid,.pm-meta{grid-template-columns:1fr;gap:16px}.pm-meta{gap:32px}}
+
 /* RESPONSIVE */
 @media(max-width:980px){
   .nav-links,.nav-right .btn-line{display:none}
@@ -265,7 +279,7 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
 <header class="nav">
   <a href="#home" class="logo"><span class="logo-mark">S</span>Samuel King</a>
   <nav class="nav-links">
-    <a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#contact">Contact</a>
+    <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#contact">Contact</a>
   </nav>
   <div class="nav-right">
     <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/samuel-king-3a6207245/" target="_blank" rel="noopener">LinkedIn</a>
@@ -274,7 +288,7 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
   </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
 </div>
 
 <main>
@@ -344,6 +358,28 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
   <div class="wrap">
     <div class="head rv"><h2 class="serif">What I'm good at</h2></div>
     <div class="skills rv" id="skills-list"></div>
+  </div>
+</section>
+
+<section id="management" class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <h2 class="serif">Project management</h2>
+      <p>Planning, coordinating and delivering, with numbers to show for it.</p>
+    </div>
+    <div class="pm-grid rv">
+      <article class="pm-card"><div class="big">2 wks early</div><h3>Store renovation, zero overrun</h3><p>Planned and tracked a full bookstore renovation in Smartsheet and finished two weeks ahead of schedule with no budget overrun.</p><span class="src">VOG and WOD Bookstore · 2023</span></article>
+      <article class="pm-card"><div class="big">12 volunteers</div><h3>8 outreach initiatives, 6+ regions</h3><p>Led a cross-functional team across eight initiatives, tracking work in Asana and Excel. Event setup time fell 25% and participation rose 40%.</p><span class="src">Volunteer service · 2023 to 2025</span></article>
+      <article class="pm-card"><div class="big">3 platforms</div><h3>One event delivery, October 2026</h3><p>Coordinating priorities for Film Week Africa, the Africa Film Finance Forum and AFFIRM, reporting directly to the Festival Director and CEO.</p><span class="src">Okhma Global Limited · 2026</span></article>
+      <article class="pm-card"><div class="big">7 phases</div><h3>Supply chain optimisation</h3><p>Ran an end to end project for Heaven's Vegetable Oil covering supplier strategy, value stream mapping and demand forecasting.</p><span class="src">Documented project</span></article>
+      <article class="pm-card"><div class="big">-40%</div><h3>Faster data retrieval, faster sales</h3><p>Restructured the CRM database and set up new tracking metrics: retrieval time down 40%, sales cycle 15% faster, manual workload down 30%.</p><span class="src">Lashbrook Rings · 2025 to now</span></article>
+      <article class="pm-card"><div class="big">25 builds</div><h3>Product from brief to launch</h3><p>Scoped, built and launched an AI education platform with pricing, curriculum, paid tiers and certificates, working with a co-founder.</p><span class="src">Social Dev Technologies · 2025 to now</span></article>
+    </div>
+    <div class="pm-meta rv">
+      <div><h4>What I do</h4><ul><li>Scope, plan and schedule</li><li>Stakeholder and leadership reporting</li><li>Risk and issue tracking</li><li>Process and workflow improvement</li><li>Team coordination and follow-up</li></ul></div>
+      <div><h4>Tools</h4><ul><li>Asana, Smartsheet, Notion</li><li>Excel and Google Sheets</li><li>CRM and pipeline tracking</li><li>Lean Six Sigma, 5S, value stream mapping</li><li>AI and automation (n8n, Claude)</li></ul></div>
+      <div><h4>Training</h4><ul><li>Project management certificate, Ensign College</li><li>TS Academy project management certificate</li><li>Google Project Management Certificate (completed)</li><li>CAPM (in progress)</li><li>BYU-Idaho, Applied Business Administration</li></ul></div>
+    </div>
   </div>
 </section>
 
