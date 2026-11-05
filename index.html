@@ -279,7 +279,7 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
 <header class="nav">
   <a href="#home" class="logo"><span class="logo-mark">S</span>Samuel King</a>
   <nav class="nav-links">
-    <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#contact">Contact</a>
+    <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
   </nav>
   <div class="nav-right">
     <a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/samuel-king-3a6207245/" target="_blank" rel="noopener">LinkedIn</a>
@@ -288,7 +288,7 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
   </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#videos">Videos</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="#about">About</a><a href="#management">Project management</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
 </div>
 
 <main>
@@ -406,17 +406,6 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
   </div>
 </section>
 
-<section id="videos" class="sec">
-  <div class="wrap">
-    <div class="head rv">
-      <h2 class="serif">Watch me build</h2>
-      <p>I document the builds as I make them.</p>
-    </div>
-    <div class="vgrid rv" id="vgrid"></div>
-    <div class="center"><a class="btn btn-line" href="https://www.youtube.com/@SamuelKingAI" target="_blank" rel="noopener">See the full channel</a></div>
-  </div>
-</section>
-
 <section id="experience" class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="head rv"><h2 class="serif">Experience</h2><p>Where I've done the work.</p></div>
@@ -473,7 +462,7 @@ footer{margin:0 8px 8px;border-radius:var(--r-lg);background:var(--dark);color:#
         <a href="#home" class="logo"><span class="logo-mark">S</span>Samuel King</a>
         <p class="ftag">Project manager and AI automation builder crafting smarter workflows from Lagos, Nigeria.</p>
       </div>
-      <div class="fcol"><h5>Explore</h5><a href="#about">About</a><a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#videos">Videos</a></div>
+      <div class="fcol"><h5>Explore</h5><a href="#about">About</a><a href="#work">Selected work</a><a href="#experience">Experience</a></div>
       <div class="fcol"><h5>Contact</h5><a href="mailto:king.samueljacob@gmail.com">Email</a><a href="tel:+2347032702820">+234 703 270 2820</a><a href="#contact">Send a message</a></div>
       <div class="fcol"><h5>Elsewhere</h5><a href="https://www.linkedin.com/in/samuel-king-3a6207245/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@SamuelKingAI" target="_blank" rel="noopener">YouTube</a><a href="https://samuelking-ai-hub.lovable.app/" target="_blank" rel="noopener">AI Hub</a></div>
     </div>
@@ -1510,10 +1499,6 @@ document.getElementById('skills-list').innerHTML=Object.entries(SKILLS).map(([g,
   }).join('');
   el.addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(b)openModal(b.dataset.key);});
 })();
-
-/* videos */
-document.getElementById('vgrid').innerHTML=VIDS_FEATURED.slice(0,6).map(v=>
-  `<a class="vcard" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="Video: ${v.tag}" loading="lazy"/><span class="vplay"><i>▶</i></span><span class="vtag">${v.tag}</span></a>`).join('');
 
 /* experience */
 document.getElementById('xp').innerHTML=EXP.map(x=>
