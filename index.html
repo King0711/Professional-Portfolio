@@ -1525,6 +1525,15 @@ nav .nav-cta:hover,a.nav-cta:hover{
 .live-frame{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff}
 .live-frame iframe{display:block;width:100%;height:68vh;border:0}
 .plink-a{text-decoration:none}
+
+/* ── REMOTION MOTION CLIPS ── */
+.photo-inner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero-photo-wrap .photo-status{display:none!important}
+.feat-media{margin:-8px -8px 18px;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#08080C;border:1px solid rgba(255,255,255,.07)}
+.feat-media video,.mo-sting video,.mo-stats video{display:block;width:100%;height:100%;object-fit:cover}
+.mo-sting{width:100%;max-width:1100px;aspect-ratio:1600/360;border-radius:12px;overflow:hidden;margin:0 0 28px;background:#08080C;border:1px solid rgba(255,255,255,.07)}
+.mo-stats{width:100%;max-width:1100px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;margin:40px auto 0;background:#08080C;border:1px solid rgba(255,255,255,.07)}
+@media(max-width:600px){.mo-sting{margin-bottom:18px}.feat-media{margin:-4px -4px 14px}}
 </style>
 </head>
 <body>
@@ -1663,7 +1672,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
           <div class="photo-id">SK · BUILD · SHIP</div>
           <!-- Image -->
           <div class="photo-inner">
-            <img id="heroPhoto" src="samuel-hero.jpg" alt="Samuel King, Project Manager and AI Builder" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <video id="heroPhoto" class="hero-video" autoplay muted loop playsinline preload="auto" poster="samuel-hero.jpg" aria-label="Samuel King, Project Manager, AI Builder and Instructor"><source src="motion/hero.mp4" type="video/mp4"/></video>
             <span class="photo-initials">SK</span>
           </div>
           <!-- Status bar -->
@@ -1719,6 +1728,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </g>
     </svg>
   </div>
+  <div class="mo-sting"><video class="mo-once" muted playsinline preload="none" poster="motion/sting-about.jpg" data-src="motion/sting-about.mp4"></video></div>
   <div class="eyebrow rv">About me</div>
   <h2 class="h2 rv sc">Who is <span style="background:linear-gradient(135deg,#8B5CF6,#CA8D35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Samuel King?</span></h2>
   <div class="about-grid">
@@ -1768,6 +1778,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </div>
     </div>
   </div>
+  <div class="mo-stats rv"><video class="mo-once" muted playsinline preload="none" poster="motion/stats.jpg" data-src="motion/stats.mp4" aria-label="98% AI inventory tracking accuracy, 283% community membership growth, 69% decision accuracy on ClearFlow, 16+ certifications"></video></div>
 </section>
 
 <!-- SKILLS -->
@@ -1806,6 +1817,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
 
 <!-- AI PROJECTS -->
 <section id="projects" class="sec">
+  <div class="mo-sting"><video class="mo-once" muted playsinline preload="none" poster="motion/sting-projects.jpg" data-src="motion/sting-projects.mp4"></video></div>
   <div class="eyebrow rv">AI projects</div>
   <h2 class="h2 rv sc">Things I've <span class="g">built</span></h2>
   <p class="proj-sub rv">Each card is a real AI Builder session. Click built cards to see how they were made.</p>
@@ -1863,6 +1875,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </div>
     </div>
     <div class="feat-card rv d2">
+      <div class="feat-media"><video class="mo-loop" muted loop playsinline preload="none" poster="motion/proj-clearflow.jpg" data-src="motion/proj-clearflow.mp4"></video></div>
       <h3>ClearFlow — Cashflow Dashboard</h3>
       <div class="feat-sub">Live SME Financial Platform</div>
       <div class="feat-tags">
@@ -1876,6 +1889,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </div>
     </div>
     <div class="feat-card rv d1">
+      <div class="feat-media"><video class="mo-loop" muted loop playsinline preload="none" poster="motion/proj-sdt.jpg" data-src="motion/proj-sdt.mp4"></video></div>
       <h3>Social Dev Technologies</h3>
       <div class="feat-sub">Live AI Education Platform · Co-founder</div>
       <div class="feat-tags">
@@ -1889,6 +1903,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </div>
     </div>
     <div class="feat-card rv d2">
+      <div class="feat-media"><video class="mo-loop" muted loop playsinline preload="none" poster="motion/proj-boltreel.jpg" data-src="motion/proj-boltreel.mp4"></video></div>
       <h3>Boltreel</h3>
       <div class="feat-sub">Video Ad Brand · Live Site</div>
       <div class="feat-tags">
@@ -2015,6 +2030,7 @@ nav .nav-cta:hover,a.nav-cta:hover{
       </rect>
     </svg>
   </div>
+  <div class="mo-sting"><video class="mo-once" muted playsinline preload="none" poster="motion/sting-experience.jpg" data-src="motion/sting-experience.mp4"></video></div>
   <div class="eyebrow rv">Work history</div>
   <h2 class="h2 rv sc">My <span class="g">experience</span></h2>
   <div class="timeline" id="timeline"></div>
@@ -3767,6 +3783,24 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
   updateDots();
 })();
 
+</script>
+
+<script>
+/* Remotion clips: lazy load, play when visible, pause off screen, respect reduced motion */
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('heroPhoto');
+  if(hero&&reduce){hero.removeAttribute('autoplay');try{hero.pause()}catch(e){}}
+  if(reduce)return;
+  function load(v){if(!v.src&&v.dataset.src){v.src=v.dataset.src}}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting){load(v);
+      if(v.classList.contains('mo-once')){if(!v.dataset.done){v.dataset.done=1;v.currentTime=0;v.play().catch(function(){})}}
+      else v.play().catch(function(){});
+    }else if(!v.classList.contains('mo-once')){v.pause()}
+  })},{threshold:.35});
+  document.querySelectorAll('video.mo-loop,video.mo-once').forEach(function(v){io.observe(v)});
+})();
 </script>
 </body>
 </html>
